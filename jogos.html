@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corrida Maluca - Jogos</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --red: #E3000F;
+      --yellow: #FFC108;
+      --bg-color: #fffde7;
+      --text-color: #e3000f;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+      margin: 0;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: var(--red);
+      border-bottom: 4px solid var(--yellow);
+    }
+
+    .navbar .navbar-brand {
+      font-family: "Luckiest Guy", cursive;
+      color: #fff !important;
+      font-size: 1.8rem;
+      text-shadow: 2px 2px 0 #000;
+    }
+
+    .navbar .nav-link {
+      color: white !important;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-left: 10px;
+    }
+
+    .navbar .nav-link:hover {
+      color: var(--yellow) !important;
+    }
+
+    /* Título */
+    h2 {
+      font-family: "Luckiest Guy", cursive;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--red);
+      text-shadow: 1px 1px 0 #000;
+      margin: 40px 0 30px 0;
+      text-align: center;
+    }
+
+    /* Cards de jogos */
+    .games-section {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 0 15px;
+    }
+
+    .game-card {
+      width: 320px;
+      background: #fff;
+      border: 3px solid var(--red);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .game-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 35px rgba(0,0,0,0.25);
+    }
+
+    .game-card img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+      border-bottom: 3px solid var(--yellow);
+    }
+
+    .game-card .card-body {
+      text-align: center;
+      padding: 20px;
+      color: #444;
+    }
+
+    .game-card .card-title {
+      font-weight: 800;
+      color: var(--red);
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .btn-jogar {
+      background-color: var(--red);
+      border: 2px solid var(--yellow);
+      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-jogar:hover {
+      background-color: var(--yellow);
+      color: var(--red);
+      border: 2px solid var(--red);
+    }
+
+    footer {
+      background-color: var(--red);
+      color: #fff;
+      text-align: center;
+      padding: 18px;
+      border-top: 4px solid var(--yellow);
+      font-weight: 700;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand text-white" href="#">Corrida Maluca</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+        
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="5index.html">Loja</a></li>
+          <li class="nav-item"><a class="nav-link" href="4index.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Título -->
+  <h2>Jogos da Corrida Maluca</h2>
+
+  <!-- Seção de Jogos -->
+  <div class="games-section">
+
+    <!-- Oficina Maluca -->
+    <div class="game-card">
+      <img src="https://i0.wp.com/anmtv.com.br/wp-content/uploads/2023/02/corrida-maluca.jpg?resize=800%2C400&ssl=1" alt="Oficina Maluca">
+      <div class="card-body">
+        <h5 class="card-title">Oficina Maluca</h5>
+        <p class="card-text">Monte, customize e turbine o seu carro com peças malucas para encarar os desafios das pistas!</p>
+        <a href="o-desafio-v3M/index.html" class="btn btn-jogar">Jogar Agora</a>
+      </div>
+    </div>
+
+    <!-- Corrida na Ladeira -->
+    <div class="game-card">
+      <img src="https://i.imgur.com/GHdta4S.png" alt="Corrida na Ladeira">
+      <div class="card-body">
+        <h5 class="card-title">Corrida na Ladeira</h5>
+        <p class="card-text">Desça a ladeira em alta velocidade desviando de obstáculos e vencendo os rivais mais malucos!</p>
+        <a href="#" class="btn btn-jogar">Jogar Agora</a>
+      </div>
+    </div>
+
+    <!-- Obstáculos Malucos -->
+    <div class="game-card">
+      <img src="https://i.imgur.com/EtdGJtB.png" alt="Obstáculos Malucos">
+      <div class="card-body">
+        <h5 class="card-title">Obstáculos Malucos</h5>
+        <p class="card-text">Teste sua agilidade e reflexos enfrentando os percursos mais insanos e divertidos da Corrida Maluca!</p>
+        <a href="#" class="btn btn-jogar">Jogar Agora</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Corrida Maluca Studios. Todos os direitos reservados.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrida Maluca - Inscrição</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
+            color: #f5f5f5;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* ===== ESTILOS BASE DA PÁGINA (TEMA ESCURO) ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #111, #1a1a1a);
+            border-bottom: 3px solid red;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(255,0,0,0.3);
+        }
+        nav a {
+            color: gold;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            color: red;
+            text-shadow: 0 0 10px gold;
+        }
+        header {
+            text-align: center;
+            padding: 120px 10px 40px;
+            background: linear-gradient(135deg, #111, #1a1a1a);
+            border-bottom: 3px solid #ff0000;
+        }
+        header h1 {
+            font-size: 2.8rem;
+            color: gold;
+            text-shadow: 2px 2px 5px #000;
+            animation: glow 2s infinite alternate;
+        }
+        header p {
+            margin-top: 10px;
+            color: #ffcc00;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #ffd700; }
+            100% { text-shadow: 0 0 20px #ff0000; }
+        }
+        section {
+            margin: 40px 0;
+            padding: 25px;
+            border-radius: 15px;
+            background: linear-gradient(145deg, #111, #1a1a1a);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 35px rgba(255, 215, 0, 0.5);
+        }
+        h2 {
+            color: gold;
+            border-bottom: 2px solid red;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        /* ===== ESTILOS DO CARROSSEL DE CARROS ===== */
+        /* Estilização dos "Cards" no carrossel para manter o tema */
+        .card {
+            background: #222; /* Fundo escuro para o card */
+            border: 1px solid gold;
+            border-radius: 12px;
+            overflow: hidden;
+            width: 100%; /* Para que o flexbox controle a largura */
+            max-width: 200px; /* Limite o tamanho em telas maiores */
+            margin-bottom: 15px;
+        }
+        .card img {
+            width: 100%;
+            height: 120px; /* Altura fixa para as miniaturas no carrossel */
+            object-fit: cover;
+            border-bottom: 2px solid red;
+        }
+        .card-content {
+            padding: 10px;
+            text-align: center;
+        }
+        .card-content h3 {
+            font-size: 1rem;
+            color: gold;
+            margin: 0;
+        }
+        .card-content p {
+            font-size: 0.8rem;
+            color: #ccc;
+            margin: 0;
+        }
+
+        /* Corrigir o display do carrossel em telas menores */
+        .carousel-item > div {
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* Espaço entre os cards */
+            flex-wrap: wrap;
+        }
+
+        /* ===== ESTILOS DO FORMULÁRIO (ADAPTADOS PARA O TEMA ESCURO) ===== */
+        .header-form {
+            background: #E4000F;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 2rem;
+            font-weight: bold;
+            border-bottom: 5px solid #ffcc00;
+            border-radius: 10px 10px 0 0;
+        }
+        .container-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #2a2a2a;
+            padding: 30px;
+            border: 3px solid #E4000F;
+            border-radius: 15px;
+            box-shadow: 4px 4px 0 #ffcc00;
+        }
+        .container-form h2 {
+            color: #ffcc00;
+            border-bottom: 2px solid #E4000F;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+        }
+        label {
+            font-weight: bold;
+            color: #f5f5f5;
+        }
+        input, select, .form-control, .form-select {
+            margin-bottom: 15px;
+            background: #333;
+            color: #fff;
+            border: 1px solid #E4000F;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #ffcc00;
+            box-shadow: 0 0 0 0.25rem rgba(255, 204, 0, 0.25);
+            background: #333;
+            color: #fff;
+        }
+        .btn-finalizar {
+            width: 100%;
+            background: #ffcc00;
+            color: #111;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 1.1rem;
+            transition: 0.2s;
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+        }
+        .btn-finalizar:hover {
+            background: #E4000F;
+            color: white;
+            box-shadow: 0 0 10px #E4000F;
+        }
+        .btn-voltar-form {
+            display: block;
+            margin: 20px auto 0;
+            background: #E4000F;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 25px;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.2s;
+            width: max-content;
+        }
+        .btn-voltar-form:hover {
+            background: #ffcc00;
+            color: #111;
+        }
+        .footer-info {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #ccc;
+        }
+        .alerta {
+            display: none;
+            margin-top: 20px;
+            background: #114c00;
+            color: #E8FFD6;
+            border: 2px solid #4CAF50;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            animation: aparecer 0.6s ease-in-out;
+            box-shadow: 0 0 15px rgba(76, 175, 80, 0.7);
+        }
+        @keyframes aparecer {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* ===== ESTILOS DAS TABELAS ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 1rem;
+        }
+        th, td {
+            border: 1px solid #444;
+            padding: 10px;
+            text-align: center;
+            transition: background 0.3s, color 0.3s;
+        }
+        th {
+            background: linear-gradient(90deg, #ff0000, darkred);
+            color: gold;
+        }
+        tbody tr:hover {
+            background: rgba(255, 215, 0, 0.2);
+            color: gold;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            nav { flex-wrap: wrap; gap: 15px; font-size: 0.9rem; }
+            header h1 { font-size: 2rem; }
+            .card { max-width: 45%; } /* Dois cards por linha em mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Início</a>
+
+        <a href="5index.html">loja</a>
+        <a href="4index.html">Contato</a>
+    </nav>
+
+    <header id="inicio">
+        <h1>Corrida Maluca</h1>
+        <p>Todos os personagens, carros e pontuações</p>
+    </header>
+
+    <main class="container mt-4">
+
+        <section id="inscricao">
+            <div class="header-form">🏁 Inscrição - Corrida Maluca 🏁</div>
+
+            <div class="container-form">
+                <h2>Preencha seus dados para participar</h2>
+                <form id="formInscricao">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome completo:</label>
+                        <input type="text" class="form-control" id="nome" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="cpf" class="form-label">CPF:</label>
+                        <input type="text" class="form-control" id="cpf" maxlength="14" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="rg" class="form-label">RG:</label>
+                        <input type="text" class="form-control" id="rg" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="equipe" class="form-label">Equipe que irá correr:</label>
+                        <select class="form-select" id="equipe" required>
+                            <option value="">Selecione sua equipe...</option>
+                            <option>Dick Vigarista e Muttley</option>
+                            <option>Penélope Charmosa</option>
+                            <option>Peter Perfeito</option>
+                            <option>Irmãos Rocha</option>
+                            <option>Quadrilha da Morte</option>
+                            <option>Professor Aéreo</option>
+                            <option>Rufus Lenhador</option>
+                            <option>Tio Tomás</option>
+                            <option>Sargento Bombarda & Soldado Meekley - Carro Número 7</option>
+                            <option>Barão Vermelho</option>
+                            <option>Grande Zé e o Dragão</option>
+                            
+                        </select>
+                    </div>
+
+                    <div class="footer-info">
+                        🕒 Inscrições abertas de <b>01/09/1939</b> até <b>11/09/2001</b>
+                    </div>
+
+                    <button type="submit" class="btn-finalizar">Finalizar Inscrição</button>
+                </form>
+
+                <div class="alerta" id="msgFinal">
+                    ✅ Inscrição feita com sucesso! <br>
+                    A corrida será dia <b>12/07/2001</b> em <b>New Work</b>! 🏎️💨
+                </div>
+
+              
+            </div>
+        </section>
+
+
+        <section id="carros">
+            <h2>🏎️ Personagens e Carros </h2>
+            <div id="carrosCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+                            <div class="card">
+                                <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWOjx7fNMm%2BbgCsmmW902GvbnArZwDmJsoZbxFpiHyB3E3deBrKdIbolRjogV%2Fafn3j%2FE1WOQEF%2BrTNspT90w7n%2BQIvshoqoB59K%2BkX%2BQXnEUamU%2FSNof41wWsXwOsmx9wh74RQZtoj1gDcp%2FHRzZ6C1phwCnui0zeeKtFelQUQAfqrr%2BgTQccR6E8QXidQx8diBpevMGtSEYy3TyBtTLfWhCumQTSAWcrHaS0Pu7FZvMtP9c3aYzsuVirwESc1Vjg%2BmK65TLK9Yw9GeTBj%2F32SJiXoauKMX%2FQmwOhkSp%2BSz%2BKZsqUFrOn1fUt%2FVpmTm%2BegbLJxKaT8TQA%2BrKNwsiZ90tp%2BNiioqWNfB5E%2BznuVHFTPa%2B9pcJ6pXNpanapgw7AN7G0pFrlw2BwEGNOwpE4d4HG5liiZ%2FTp0ELSkPIUty%2BobmmRUDr179aE%2FtrXJORJ4ndbF60UD3aOakyzn13%2FdCu%2FJusctXmQ4ss%2BmKwFyUIP%2FLfPryL96IsZk6eVYLiNSiDWgy3GVLz8kQBzd6PNZJfVzx%2FVesJX6GdCHj5GOTrMv95NaRmcqkW%2B83l4wA4RKIHL1xSw4Hoh%2FjIza9fzXbdTz49w%3D&allow_caching=true&sz=w512" alt="Máquina do Mal" class="img-fluid">
+                                <div class="card-content">
+                                    <h3>Dick Vigarista & Muttley</h3>
+                                    <p>Máquina do Mal (00)</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWBeqYS%2FxbrtNOLDUslxAmXqasAFfZpZq5wGOR8eU0o3s%2FEScRv8byk%2FCcxlNzonajlsJnh8tR%2BuBaAcFntnhVa%2FBXlM2mCGMEBI%2BdF33mba6OA8zyVq%2BU%2B7GdGU9KizW3FHPh0JK%2Fzhi%2BzWCzbJz9kTUUowLyP5%2B4FCGapp1wp%2B87iu0PhABXUMDsJvKKCa73nQSrdskMM9gQ01fsykXwOGKLTQM40uIU0yrcJXgp5ifMoplI2aPMg29nyEjD6Ey9KyDdrp9FdtydPRg%2FQMnjynxdSdDl8v9tfnsyJiVFXJzTsxS3%2BmLQgSIfHAitqLavFAIY2DkORcuxxSSsoRx%2Bdr4cyOnDE5rqhR6cdmIgeW8SR2cTC%2Bbr1%2FmET8HXrgxwymchKdKv1tkKx8Lju4uVH234vV%2FP7sV7T4RzTNfD9oBD3qgQ3zF6Oui5nIlMW%2BHI9Z%2Ft8togr4zguA%2B7TvupksisJmPlhSCfdHEv6cASDacseU5ZSNE0Kh5W%2BQHjCnE3xf2ON0VpCeOXc%2FlfHVYgnhgcHs9esV3sSm4ORg0xUPZ6lfar6DzCp8051XDR4%2BTAxpGqKl9ZEqe4fEJF87edfJltxJKBMbbk%3D&allow_caching=true&sz=w512" alt="Carrinho Rosa" class="img-fluid">
+                                <div class="card-content">
+                                    <h3>Penélope Charmosa</h3>
+                                    <p>Carrinho Rosa (5)</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEXecJNrtzpN9Za4O3FUP%2FkT76aqNSVdB0Tb3uIo2I5%2BOd3%2BD9L0vgY2ovjjOrRUJR9doaUEwHIRVx8mh%2BP5oX1AJyMVY5gqFENdwqiW9XMSUBb4H%2BX5FOoC0Pti6HkaWxlEXAySbwubpKwwtaGOwQTCoP%2BY2UUo573tYjRMibxJ7cGPbij5c%2BERGBn%2Bp2KpveQa9D3XSIOeY%2FkJvYWLHd%2F9JoCTGagmm3l7imgC44fC4zL4yaeKr8%2ByuD11z2ofxzE52CC58Voxixs835sa57ohuVSPS0TDUNZ1e51Ga2r9IEz1hxgB3WgMsTU3d84%2Fns5OU4c6GbNh5ACrBpp9qKAppm9EXTn7Mws0qpnhVkkfkujEpAm9sEWGmsGY2PoJpgL6XYiQW3z6r47MbaCCzqGi0UcEmcVxw05bXmFEwPHHGKPPOqv1lgXlaUqnxmO9tMkmDkEM6ZX1Q3c64J1siiabsxzO83oi3FlFDGsXPXt9ANz0B%2BFbmC5lK9BBBNpQgtnP9BbBGGUPZBEJ%2Bp1jpGc1RjepXtcDVJvP6ajo9vaxo68RXMneOLP8dwUYl3qOcjbkvLT90edcc3b1931ozPfdMx5RzU6Zrx4%3D&allow_caching=true&sz=w512" alt="Carro à Hélice" class="img-fluid">
+                                <div class="card-content">
+                                    <h3>Professor Aéreo</h3>
+                                    <p>Carro à Hélice (3)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+                            <div class="card">
+                                <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUze6lF3Xf3YhQwQokZaFwxLIxApzN5zDIXaFGpoAVI8Y7GB8zspo6OHVE8WQndhYiCygPpaz3jdwE2WHf5CBiBwldHbpIsCqjTGFWVRv9bAYjRTC4ibkvNyX4a%2FNTAoV9RY6geYriBoBIh2SFVPcFX2Fh4A0XFQR95lY8mCA8NWMB0OmLQNWjiJzDL1aY9fbadG6uySUJ6pluL5Z5es6xnxF%2Fed59JJ36j%2F%2B%2FJdjHyfaiW0ojDBj08bsdqAFtZWZR4Y9OVOdLt%2FaGt4vf3p1CnogbGxY7X1u26jKfBE6nSbbRgjMBklQjG7N5ynaFP4IX74xf0ei8yKDOhvGmzeKWA4kukin7NuH2%2B2ank7FKKIjuGs7iqJXwnduQ52pJ7WGSkpt32LIUbpXbt88u90yvBu6%2BAvmsL59zfNJgCx27PNjsnTQNBH08mpqpuerYaK3ZklWMWlmwoMREazgtvgNxEte1EwEkI%2FiLFl0SFuFJ9M2GDNoZUo37YLjoAI81nOqfuCOiXiD0lXkb7O0%2B%2BbcQjrQAoOJAmvsa9hhI8tMZimtXGHGgWfWOWHc%2FGhNx3yXbgbyS3KmSY3lYAwumQbgC5zSfxAvn7kqo%3D&allow_caching=true&sz=w512" alt="Carro Irmãos Rocha" class="img-fluid">
+                                <div class="card-content">
+                                    <h3>Irmãos Rocha</h3>
+                                    <p>O Tronco Móvel (6)</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEXOm3iHdYbvVgcc28tRIvRfu5g00aZ5plNKKBloqnxY2mAZ9XwmxjiZc96ZVVOWO1mD%2FRQkRxfw1aXSixoMf%2B4Me1ltgERQxEfYugJnWS1wgxcbN3wSj%2BX%2F780Nj8sX2t3ucRIoCyOT8QfgEfya0MLr48otrVOxmgiLAEo4UHuyBjzvfxvL6EOO3c0uNfsRkewMWpYTaHvueGxCa%2Bu0R60ou5AJAG1PD5%2BPhVmUkNCEnptqwvAtSYTU7IizC2v5GxjcFc5pk3c0oS8rCD3Gw1F1SlYkInyQQXYzEpM23m8lbxdX0AppcrJW2u7IxtPmqM2FmbHaT5tE4I5TohEvC4OyIWkHfw1lKvvlx0HslYc6dbsSN8qQGbqyu8c61ZXt9Bh%2FMcB3%2FEmTffckTIr041irHGS62TKVZEf1ghZvSv6Sf9MIZKOtrddvukna3fxW%2Be59Wl5s9UemefVhHE3Gkzi56TnbNwNhbY57LZid9%2BnB5CW8qgsuS5pC1Z6w%2BXsNpV9XVWOnVS3JrrlpesPJAMwOUMJFY%2Bqfkvoe8zl87Wpak1jXIk%2BxDE8o2V2oeX2hYrRQUr7iNovGE%2FxH8T4UKpl21z1KLOzjIW5z&allow_caching=true&sz=w512" alt="Barão Vermelho" class="img-fluid">
+                                <div class="card-content">
+                                    <h3>Barão Vermelho</h3>
+                                    <p>Carro Aerodinâmico (4)</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWAxwreUEZxXZv5Hn4J%2BmxOsSV0PN99esDAc9dQBEYLfkA3wxOmWtZOBCSiOGBHOGF3m3SJyRBpv9PMonz7P3lX3pA4JKNOIRrpdZplOmnPiYO38%2F%2B8FJjPRaZnGQIGQLRI7lAwV%2BVG97U3PJPUb7tGMv%2BicNjCd8FZtv7SHQrY4IgDGoNg2ZdHUN%2F1GY39ZlXWkJE%2B%2BObXjz7jArYVXhwjWEd6ns9%2BHQpHeb9V0KmPONV47SFxrNsLbhyDRArhwcYSy9tYTKpMIXeWvjenDZoiJwECori074cOhfafll3f0t%2FuMxxSvhTOfCWZemCKrfQohQcWOQdQnlCh1E%2FzlJCNCI0o9irvcuDKCEK1nmieLXAc6Mbq8nMUiyvLTFp2BGEVBH3Wth6WqGyqCxkhIqgznYvkfBhYFZ8yyhvgqxI7X6x3F2ft7cB8ut44DHF40J5A25dIHYnvJYW15A3JRXeeKyl6OIMv7iCAXPl%2B2FHpOxRAsE7hR2TdFM4Gpzgz3f%2Bufs4jvErGPwU5fN48HW%2BXQG0CXmrhWTk1eXeZHAUBVqrghLcGgAHY7BWLm8MToXUeh8LX%2FM34QG4FeWTMDNbijvywhTHFqniV&allow_caching=true&sz=w512" alt="Peter Perfeito" class="img-fluid">
+                                <div class="card-content">
+                                    <h3>Peter Perfeito</h3>
+                                    <p>Turbo Terrific (9)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+                            <div class="card">
+                                <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWYBE5Y%2B1BkqNAA0bOdMoWoM0pLLUwJX%2BVN3TSJaELPYe%2FnCpIlVC2%2FTSzKncbByLKqr%2Bzj74vQ%2BIAdogSn7MYCrF0oXAwTnCS9mtTi2RM9VeV5YxoBpsHOTB8gnbeWHevRqzrMjMSGd3QV5gqcoPIcwsnRowtERgA0tONkfkEu0i7wGiNYoLMd6lnGt8NGQjzxE8r0DyST3pIbjSNAJr7U0diCeqQWqtCPn0Rixlj30d4d1w20yscVOeSy%2BXuGQcsaUrVjXFmtUka0CrE7yJJJNxb72V7rMuBME4xPWuFxzzghdFo%2FFdjbdj1g51tDsPrsIfMa94rE8DQL4mCFpUB8Z64MLxNZKIAQGrnhu%2Bnthqbm9AVql6%2BxGNFeq3Z7IXlK4R9WfmHdC4xKF36thIHOwHdPn0xLEj1fLvkjZmAeow5miTHqUCXFDY%2F5s7mzMWUYCQt%2F2dq%2BDmCyGd%2FGcJ6ROVb9hxpoo8uiIoiYQQQoBTH%2Fd4nOAMXFRnlcw5zccdOBE%2BasS5AB8b0KzaJj9jZg0WdWvqBb0uX3%2Bv0O%2BDtT34mxAXk18tarpR2h0E6VyvUAm9MCsbIeFya0wC2dEjLqPQa48xM%3D&allow_caching=true&sz=w512" class="img-fluid" alt="A Quadrilha de Morte">
+                                <div class="card-content">
+                                    <h3>A Quadrilha da Morte</h3>
+                                    <p>O Carrão de Morte (10)</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWwrVmFJO%2F3QIRETrruo7BHwvnISe177TKpxEerF5uIIHsnrwGmzSafAIXatsDOtZiJdyNmg0Uz7fpDA%2FQl9I%2BrB4zEzEt%2FgIIKwmix3fSTL9hViKTWAwh84ONmALCMq1GDMIZW6izkU91SHN9C8mA7dbYNzJ0yAKqv5iNLMD6BEs7rlPf990UZ3i74B3R2fH0ABZfOVrDsfzg0IG1zKJsrIOsKTuod8aLDizMajEeoY%2BQQKNd%2FSJw4rKRwxwv7xL9bDOr40UEyHFK2XahudkoSxdQwa4H%2BNlERYccJ4A9xxOb2xEFfwv0qdqourmvmyACcF3htgyc9P8Tsdbi3J404TbL3TMz6HgnI6k2J1IU5CngLLltjwVGIcZEVhOzh1ZFfZfjpKt2Njn%2FMJGXf03TUZ%2Bd8atJ1%2BZdOTwRxxFJMDvNtki%2F%2BB1LN6Hy6Xu20YLG%2FfdhlZKGU0Y9d6Fr2s9I3D59%2BOWdlg9muH2b7oUNeRDww%2BhZ0Z2mu8ltwd6MwbJw4t0wi2UaiImQrDQVchLSJ20wGDMxpsiCLAPCiibSe3jif7Vkf4tUEs96dhm2TYElz0p8F9GxqRFspN4J1%2BEMYhRMr8YY0aew%3D&allow_caching=true&sz=w512" class="img-fluid" alt="Tio Tomás e Chorão">
+                                <div class="card-content">
+                                    <h3>Tio Tomás e Chorão</h3>
+                                    <p>Tanque Treme-Terra (6½)</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUze6lF3Xf3YhQwQokZaFwxLIxApzN5zDIXaFGpoAVI8Y7GB8zspo6OHVE8WQndhYiCygPpaz3jdwE2WHf5CBiBwldHbpIsCqjTGFWVRv9bAYjRTC4ibkvNyX4a%2FNTAoV9RY6geYriBoBIh2SFVPcFX2Fh4A0XFQR95lY8mCA8NWMB0OmLQNWjiJzDL1aY9fbadG6uySUJ6pluL5Z5es6xnxF%2Fed59JJ36j%2F%2B%2FJdjHyfaiW0ojDBj08bsdqAFtZWZR4Y9OVOdLt%2FaGt4vf3p1CnogbGxY7X1u26jKfBE6nSbbRgjMBklQjG7N5ynaFP4IX74xf0ei8yKDOhvGmzeKWA4kukin7NuH2%2B2ank7FKKIjuGs7iqJXwnduQ52pJ7WGSkpt32LIUbpXbt88u90yvBu6%2BAvmsL59zfNJgCx27PNjsnTQNBH08mpqpuerYaK3ZklWMWlmwoMREazgtvgNxEte1EwEkI%2FiLFl0SFuFJ9M2GDNoZUo37YLjoAI81nOqfuCOiXiD0lXkb7O0%2B%2BbcQjrQAoOJAmvsa9hhI8tMZimtXGHGgWfWOWHc%2FGhNx3yXbgbyS3KmSY3lYAwumQbgC5zSfxAvn7kqo%3D&allow_caching=true&sz=w512" class="img-fluid" alt="Rufus Lenhador & Serra (Carro 1) - Reutilizei uma imagem anterior">
+                                <div class="card-content">
+                                    <h3>Rufus Lenhador & Serra</h3>
+                                    <p>Carro de Pedra (1)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+                            <div class="card">
+                                <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWAxwreUEZxXZv5Hn4J%2BmxOsSV0PN99esDAc9dQBEYLfkA3wxOmWtZOBCSiOGBHOGF3m3SJyRBpv9PMonz7P3lX3pA4JKNOIRrpdZplOmnPiYO38%2F%2B8FJjPRaZnGQIGQLRI7lAwV%2BVG97U3PJPUb7tGMv%2BicNjCd8FZtv7SHQrY4IgDGoNg2ZdHUN%2F1GY39ZlXWkJE%2B%2BObXjz7jArYVXhwjWEd6ns9%2BHQpHeb9V0KmPONV47SFxrNsLbhyDRArhwcYSy9tYTKpMIXeWvjenDZoiJwECori074cOhfafll3f0t%2FuMxxSvhTOfCWZemCKrfQohQcWOQdQnlCh1E%2FzlJCNCI0o9irvcuDKCEK1nmieLXAc6Mbq8nMUiyvLTFp2BGEVBH3Wth6WqGyqCxkhIqgznYvkfBhYFZ8yyhvgqxI7X6x3F2ft7cB8ut44DHF40J5A25dIHYnvJYW15A3JRXeeKyl6OIMv7iCAXPl%2B2FHpOxRAsE7hR2TdFM4Gpzgz3f%2Bufs4jvErGPwU5fN48HW%2BXQG0CXmrhWTk1eXeZHAUBVqrghLcGgAHY7BWLm8MToXUeh8LX%2FM34QG4FeWTMDNbijvywhTHFqniV&allow_caching=true&sz=w512" class="img-fluid" alt="Sargento Bombarda & Soldado Meekley (Carro 7) - Reutilizei uma imagem anterior">
+                                <div class="card-content">
+                                    <h3>Sargento Bombarda & Soldado Meekley</h3>
+                                    <p>Carro Blindado (7)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWYBE5Y%2B1BkqNAA0bOdMoWoM0pLLUwJX%2BVN3TSJaELPYe%2FnCpIlVC2%2FTSzKncbByLKqr%2Bzj74vQ%2BIAdogSn7MYCrF0oXAwTnCS9mtTi2RM9VeV5YxoBpsHOTB8gnbeWHevRqzrMjMSGd3QV5gqcoPIcwsnRowtERgA0tONkfkEu0i7wGiNYoLMd6lnGt8NGQjzxE8r0DyST3pIbjSNAJr7U0diCeqQWqtCPn0Rixlj30d4d1w20yscVOeSy%2BXuGQcsaUrVjXFmtUka0CrE7yJJJNxb72V7rMuBME4xPWuFxzzghdFo%2FFdjbdj1g51tDsPrsIfMa94rE8DQL4mCFpUB8Z64MLxNZKIAQGrnhu%2Bnthqbm9AVql6%2BxGNFeq3Z7IXlK4R9WfmHdC4xKF36thIHOwHdPn0xLEj1fLvkjZmAeow5miTHqUCXFDY%2F5s7mzMWUYCQt%2F2dq%2BDmCyGd%2FGcJ6ROVb9hxpoo8uiIoiYQQQoBTH%2Fd4nOAMXFRnlcw5zccdOBE%2BasS5AB8b0KzaJj9jZg0WdWvqBb0uX3%2Bv0O%2BDtT34mxAXk18tarpR2h0E6VyvUAm9MCsbIeFya0wC2dEjLqPQa48xM%3D&allow_caching=true&sz=w512" class="img-fluid" alt="A Quadrilha de Morte">
+                                <div class="card-content">
+                                    <h3>Professor Aéreo (Clone)</h3>
+                                    <p>Carro à Hélice (3)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carrosCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carrosCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </section>
+
+        <section id="corridas">
+            <h2>📅 Próximas Corridas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Local</th>
+                        <th>Circuito</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>20/10/2025</td><td>Montanha Maluca</td><td>Serra do Desafio</td></tr>
+                    <tr><td>03/11/2025</td><td>Deserto Vigarista</td><td>Dunas Vermelhas</td></tr>
+                    <tr><td>17/11/2025</td><td>Cidade Maluca</td><td>Centro Urbano</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="pontuacao">
+            <h2>🏆 Pontuação das Equipes</h2>
+            <table>
+                <thead>
+                    <tr><th>Equipe</th><th>Pontos</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Dick Vigarista & Muttley</td><td>120</td></tr>
+                    <tr><td>Penélope Charmosa</td><td>115</td></tr>
+                    <tr><td>Professor Aéreo</td><td>110</td></tr>
+                    <tr><td>Irmãos Rocha</td><td>105</td></tr>
+                    <tr><td>Quadrilha da Morte</td><td>100</td></tr>
+                    <tr><td>Barão Vermelho</td><td>98</td></tr>
+                    <tr><td>Peter Perfeito</td><td>95</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Corrida Maluca - Todos os direitos reservados. Projeto interativo.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const form = document.getElementById('formInscricao');
+        const msgFinal = document.getElementById('msgFinal');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            msgFinal.style.display = 'block';
+            form.reset();
+            // Scroll para a mensagem de sucesso
+            const section = document.getElementById('inscricao');
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    </script>
+</body>
+</html>

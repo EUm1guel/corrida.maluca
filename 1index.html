@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Corrida Maluca - Equipes, História e Loja</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* ===== Geral ===== */
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+      background:#fffde7;
+      color:#ff9900;
+    }
+
+    /* ===== Navbar ===== */
+    .topbar{
+      background:#e3000f;
+      border-bottom:4px solid #ffc108;
+      padding:8px 16px;
+      position:sticky;
+      top:0;
+      z-index:1100;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .brand h1{
+      
+      margin:0;
+      font-size:1.4rem;
+      color:#fff;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      text-shadow:2px 2px 0 #000000;
+      font-weight:800;
+    }
+    .nav-buttons{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .nav-buttons a{
+      display:inline-block;
+      padding:10px 14px;
+      background:transparent;
+      
+      ;
+      color:#ffffff;
+      text-decoration:none;
+      font-weight:700;
+      transition:all .15s ease;
+    }
+    .nav-buttons a:hover{
+      transform:translateY(-3px);
+      background:rgba(0,0,0,0.06);
+    }
+
+    /* ===== Cabeçalho ===== */
+    header.main-header{
+      background:#ff9900;
+      text-align:center;
+      padding:34px 20px;
+      border-bottom:6px solid #ff9900;
+    }
+    header.main-header h2{
+      margin:0 0 6px 0;
+      font-size:3rem;
+      color:#fff;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      text-shadow:2px 2px 0 #000;
+      font-weight:900;
+      font-family: "Luckiest Guy", "Fredoka", cursive;
+    }
+    header.main-header p{
+      margin:8px 0 0 0;
+      color:#eee;
+      font-weight:600;
+    }
+
+    section{padding:36px 16px}
+    .container-tight{max-width:1100px;margin:0 auto}
+
+    /* ===== História ===== */
+    .historia-card{
+      background:#fff;
+      border:2px solid #ccc;
+      border-radius:12px;
+      padding:24px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08);
+      margin-bottom:30px;
+    }
+    .historia-card h3{color:#222;margin-top:0}
+    .historia-card p{color:#333;line-height:1.6}
+
+    /* ===== Carrossel ===== */
+    .carousel .carousel-item img{
+      width:100%;
+      height:460px;
+      object-fit:cover;
+      border-radius:12px;
+      border:2px solid #ddd;
+      box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    }
+    .carousel-wrap{margin-bottom:30px}
+
+    /* ===== Cards ===== */
+    .personagens-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .card-personagem{
+      background:#fff;
+      border-radius:14px;
+      overflow:hidden;
+      border:2px solid #ddd;
+      box-shadow:0 8px 20px rgba(246, 244, 244, 0.08);
+      transition:transform .2s,box-shadow .2s;
+      text-align:center;
+    }
+    .card-personagem:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.12)}
+    .card-personagem .img-wrap{background:#fff;padding:18px}
+    .card-personagem img{width:100%;height:180px;object-fit:contain;border-radius:10px}
+    .card-personagem .body{padding:14px}
+    .card-personagem h5{margin:6px 0 4px;font-size:1.05rem;color:#111;font-weight:800}
+    .card-personagem p{margin:0;color:#444;font-weight:600;font-size:.92rem}
+
+    /* ===== Footer ===== */
+    footer{
+      background:#ff0000;
+      color:#fff;
+      text-align:center;
+      padding:18px 12px;
+      border-top:4px solid #ffc108;
+      font-weight:700;
+      position:relative;
+    }
+
+    .btn-voltar{
+      position:fixed;
+      right:20px;
+      bottom:22px;
+      background:#e3000f;
+      color:#fff;
+      border:none;
+      padding:10px 14px;
+      border-radius:999px;
+      font-weight:800;
+      box-shadow:0 8px 18px rgba(255, 255, 255, 0.25);
+      cursor:pointer;
+    }
+    .btn-voltar:hover{transform:translateY(-3px);background:#000}
+
+    @media (max-width:600px){
+      header.main-header h2{font-size:2rem}
+      .carousel .carousel-item img{height:300px}
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- topbar com botões -->
+  <div class="topbar">
+    <div class="brand">
+      
+      <h1>Corrida Maluca</h1>
+    </div>
+
+    <nav class="nav-buttons" aria-label="menu principal">
+      <a href="index.html">Início</a>
+    
+ 
+ 
+      <a href="5index.html">Loja</a>
+      <a href="4index.html">Contato</a>
+    </nav>
+  </div>
+
+  <!-- cabeçalho central (título 3D) -->
+  <header class="main-header" id="inicio">
+    <h2>Corrida Maluca</h2>
+    <p>História, equipes e os personagens mais emblemáticos das corridas!</p>
+  </header>
+
+  <main>
+    <section class="container-tight" id="historia">
+      <div class="historia-card">
+        <h3>A criação de "Corrida Maluca" (Wacky Races)</h3>
+
+        <p>
+          <strong>Corrida Maluca</strong> (original: <em>Wacky Races</em>) foi idealizada pela dupla de estúdios Hanna-Barbera no final da década de 1960.
+          A proposta era simples e genial: juntar o espírito das corridas automobilísticas com o humor pastelão dos desenhos para criar um programa
+          que funcionasse tanto para crianças quanto para adultos.
+        </p>
+
+        <p>
+          A série estreou em 1968 e apresentou onze carros excêntricos, cada um pilotado por personagens com personalidades muito marcantes — do vilão trapaceiro
+          ao herói charmoso. Cada episódio mostra um percurso diferente, repleto de armadilhas, truques e situações absurdas. O roteiro explorava a criatividade das
+          invenções (muitas vezes falhas) dos competidores, além de gags visuais e trocadilhos que se tornaram a marca registrada do programa.
+        </p>
+
+        <p>
+          Entre os personagens, <strong>Dick Vigarista</strong> (com seu fiel cachorro <strong>Mutley</strong>) tornou-se o arquétipo do trapaceiro carismático, sempre criando
+          planos mirabolantes para vencer. Personagens como <strong>Penélope Charmosa</strong>, <strong>Professor Aéreo</strong> e os <strong>Irmãos Rocha</strong> deram à série
+          diversidade e apelo visual — cada carro era um personagem por si só.
+        </p>
+
+        <p>
+          Ao longo dos anos, <em>Corrida Maluca</em> ganhou spin-offs, adaptações e referências na cultura pop. Seu design de produção colorido, as trilhas sonoras animadas e
+          o ritmo acelerado tornaram o programa um clássico que atravessou gerações.
+        </p>
+
+        <p style="margin-top:8px"><em>Nota:</em> o texto acima é ideal para colocar na página; se quiser, adapto para uma versão mais curta (para a loja) ou uma versão multilíngue.</p>
+      </div>
+    </section>
+
+    <!-- carrossel de momentos -->
+    <section class="container-tight carousel-wrap" id="momentos">
+      <div id="carouselCorrida" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEXzVVS2kGoUkd090G8APRvdgibdCWnSoa6IVxMbEipfw2yOh8GhJ7cXpuSie3qJfFpaA4X6Hjks86UFL70YeKLQRCJ5qBeGz37DGmX4Irb2YAwmboU9hqTFEro06ZByGbZ8M8qCaNqVWhg%2FOVWHdoh4bJuT7eENXVOZUbRxmywdPJvO6a0wplWgSyRpz13ICWLx7Bd0Gyv%2F%2Fb9evRfoFjU5pemyq0AwdkZXU8%2Bo0Ztd%2BZ27rksgclPjECU5lirFJolam%2Bh0pDf7LpW%2BLHkPl7707vHttqQypK1wyDCAJFk%2BKhUzvS7OmkToQQuBZbgnrSA%2Bogge%2F%2F9rVrIZF0jUSPLYxtrneSam4sA48HbiJ7aeQsnYCVA4UHQ9wLuVFAZqzG54vkaqEPe0cq8O4jTL8dpjhBVwFIPJiB6Nz3LkCtHNYn6d1TFut9AcQbFlpYqlHIgNKFGEuGFvP2%2BKYi3YZv8UasPDDVMHVlZSWHlNP39DLlMGxRyh1WV0DyLyFfv42BFcFI9H2lJoRywzBcUNi%2B36NraFpsTQP11FdcR0NhPufd0%2BxrXbCiyHtPgzgg%2BZVWVTfbUPEEBtRTsAKz7548oUNHv52gksHavOP1PGqgca2M1MfIiYc%2BGA%2FkfITkc%3D&allow_caching=true&sz=w512" class="d-block w-100" alt="Momento 1">
+          </div>
+          <div class="carousel-item">
+            <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEVaCmHS3yEaqhtyr5BBwliLaPBPhglf6xhWp4XYq%2Fau9sUZijUpOrFACnOj6u1Jy4luHpHQQ3%2FZDHOVlGuB544vGSdAXqc9ri442MSMzTEm7AlPrc3r%2F7c8WjpIoriPQKRQKAl1maVfBDSLnK2JI6NQA9bH183Ga9bRq9AKh1tRAR7UNALY0isgr6Xbsr3uRDR2P8enSKRohALO%2Bg4IQwleFHiimiyhsaQnD%2F1%2BFQJA%2Fjy%2FY0D8PMQ%2BFPWnoFiScjvYFySjfYv9eijuwvk7v8JpLL919EUJvUZOvHQ1OmaQOKWohQdot0NUBZZVAwpElxXxUM08isX4BFMAtWfY4aGWm8kJdwuLafe1BrRPKM4ckiuQAnO6EhOBnR3cojcKsC4HalActFSccDNxBHfVTW6uNHaVbFSJf1NlqJTVrDfklWHSz2fc7x4XNXZ5HCsj5T004EssZRjXiWf%2BFuuqe04eSkwn10WDw1AAat0XkuaeEeWtVQHIU0qEg2eu5bExdvz7ARQCoLDjOjC0IlnSZdzhN8TnKnMK63pfWDpP2nH3YuIBP%2BDBq5bjQMbrSsSQvXObPicpEOpsI4CAuVyhJhh%2BKTfVkQXSl48TwohbSyiQNn71gGz6%2BNNAMEQtrg%3D%3D&allow_caching=true&sz=w512" class="d-block w-100" alt="Momento 2">
+          </div>
+          <div class="carousel-item">
+            <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWbrPATS8ogivk8Pd2f%2BHx%2FZiiwifBO%2F2M01%2B9gPePrvrDPz1i%2BaefwISwbK4Q5NvktDEtbTxji%2Fk7CwAdt8NWyGq09rOpsTteE6jlCmLjtE0beWQZacnKVl%2BRa4Bw9K9Lz2%2BfIguz%2BLT6sgmaQJIkhPVk4wDab0GV55CYGIbM1muy%2B4j%2FnIbgfQeNbxrc5AuMxyHW%2BeIeZOjpmCbGJblydus2pbr9ny8j4kNktbPUTkDvbA16uZjVex79%2F1KiAfDCl7bYK2PlTISvd0CVMQtOqe2b9XcTfIvt7cHnwtgL0e3elK1yX8mxe%2BvfDJ9J91fBl2Z61zm%2FdAGhoJSzOIOmqz44hwajp%2FR2Pntt5S3HVU1tjyPvYVCyX98WUQ%2FQiiQCCCg7aqp%2B2NdUGahvn3nc9aITKaVfLoxWV%2BOfLWUJLn5xvMdJ2oJo8%2FEuFU8koTiCYGJvMVWCGluRk1jk7jImE9w81HGP5AsMn5R9k1779OZcxfgrtYc2%2BozrEGjV0ly2RXCWLfG0cTuARmCL77wlF094mbPWWSN64LNCUXw0jeV7sP8%2BmFJblUfdTX6O08L2zRUVe8xUkfNq2FWrb%2FaMEuDXKeqVQSdVZ2ZyWZgqATJfBeMdc9oo7kk%2BPKA%3D%3D&allow_caching=true&sz=w512" class="d-block w-100" alt="Momento 3">
+          </div>
+          <div class="carousel-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhcaOa5kW0bPAeX48GTc98OYm0C9082ySL4A&s" class="d-block w-100" alt="Momento 4">
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselCorrida" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselCorrida" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Equipes / Personagens -->
+    <section class="container-tight" id="equipes">
+      <h3 style="color:var(--vermelho-corrida);margin-bottom:14px">As 11 equipes & personagens</h3>
+
+      <div class="personagens-grid">
+        <!-- 1 -->
+        <div class="card-personagem">
+          <div class="img-wrap"><img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEW3ElKDsaMrCmAXh7xpcTqdH5NOG5GnivgEnyEGM3uXAI0INq2lHZy25LdElne17%2BZvAjNLDm2aY3nh0xftz4Iv6pLQxcjhcWWHVfm50Pld6Jd%2B5xB6m0ubbTrnggyYiVY2I6tNYQUmCiVs5Beo8U8ToY0fs2egueNa3TJ7O%2BcEhTQ4Q83VxMSvUTuK6A35JkjCGmMXzzBrZnNnfkLhEb%2FtKauqZ1Fr45nJ8HVg9a2JQCJLMOEtk61ANwvq0rm89k90P02gffnA2eZks0OGwCDWG4nHupquVtPUylCdOvXh7w3ovL69jx75vjSB9oYjCRXx%2BO%2BcQkJ%2FVXpsMDsPaOYKgxi%2BxklCU2kVj5aiTYSkrPmZjc6oSbuJngpeTyAevvVOPXANk5ivKyGM4x%2Fg2wnnS8p%2BAjZg2zDg3UdH834UVOX%2BN74DPkf5M6z2b2qAz31l5mI1qtJYvLEJ0O5OpHERYjplhtH7wGUzElsYKKPlIqoPYcZwaq5VUyBIIKjzKkkLGev4AwlkREJcIetAiOY0yVMVTftYrCd0okcLodcq470fhJzDAiEjSo2offfqqUYVxh68Ry%2Fx589oXL9B7crNZ%2FQvbbXY9wjcbdISIbi3lVY7UZQaOSa%2FIvUxesk%3D&allow_caching=true&sz=w512" alt="Dick Vigarista e Mutley"></div>
+          <div class="body">
+            <h5>Dick Vigarista & Mutley</h5>
+            <p>Máquina do Mal — vilões trapaceiros e engraçados.</p>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="card-personagem">
+          <div class="img-wrap"><img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWhAPk2sa4sYrUl64ZAj8vDZXcHFDmt%2FHyZ5GcbV2w79yw%2BQrWrcR3ctJu0S245UVK5vHA4Isg6lJBXhjTiN%2B8j0A3OnlEZruF8lQtHmMvwh%2BDQ2cW4aAb7FLFHK%2B7VAUVuZbgOQzmEKSlUnKgjMwo7D9XGlgb6eG%2Bo8Vb%2B5cWQ2jwxB22ctIAqTsJhfUqN2spyJREjil1cMkvmnQ862mHpZACrpPoiGTCkHjUBYNh0U6frOh0m%2FD36Lv%2FxAVqyJLSzng0Ol5kK%2FxXtBK5Azo9igJt%2B0JWMeLB5Ub1qH5q7kwJU9OI26A2oWmAmei65%2FtTJWcXMXHfuDEbiKHoiQ7s2nMZ3VXrtUDEBHhbc0JQcukgvQUI4TSpv3v9VEE63cnpK%2FRvDC8%2BCT1fi9VHqi%2BIU7Uh%2Byh21C%2BQe5ot5s5XtTfu6mPCSr7sy0wlLRwInYAgTG5RvxAmC6NHOsmYAKrsjdOf8INaQwAbZxK%2BR2JjYGSD1AnikgcJqIZTkfGKnenRnkdofsrbwrvZLM%2FF%2FjoL5%2BabjnZSlSpgR5D8D%2FYV%2FO%2B4lOD%2FF92%2FN8qRNKj8nmbYOmU%2FEdfkUAy5QWam7dFKJPn1m%2BcKytw%3D%3D&allow_caching=true&sz=w512" alt="Penélope Charmosa"></div>
+          <div class="body">
+            <h5>Penélope Charmosa</h5>
+            <p>Elegante e charmosa — sempre impecável.</p>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="card-personagem">
+          <div class="img-wrap"><img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEXsx1x9Gix3s9II2Hi6xJc4xdrprLoNJQbyr4CwXIM6wTHu7iHx%2FaRQ0veF3SFNeUECxgqbKoFg1t%2FBPRr8gZ9z%2BRBAYm%2BLwtXqEn3C0YLP1UYVgUAN9zDzZ%2F0T%2B563bBCQObqXizK6OHPNESQsB2L9Lg7JW0TYd1MrDbNuhWUdNVAk7f31rG2jgd1T%2Bhxgw9%2BK28FIz8M0qh2OlIFOCbBUYmFVL7zMn1Twh71fsvj9eyCvpp%2BpyL9GJ3lkF5jziFMdlGS9RiAD6I1Dz%2B5gbgYngUcmAxfNunMIV3OYc6NFc494171ro8PtMwwqzWfJ1Y9HbzSJJUEjc0BJVw5ye0%2Bl6LwIYsi4pear3NX8fehoF2X%2FYturkCSH5wrWNluRrIxRPw2ln%2BARK0qzjfV%2BvDWLalFj9xpK2R8DhBMLFG3f%2FK7weX8EUwVWuzAKfTOHckUmC0303Al27EA4NmyDB7Z6OM94sr%2Bk%2FXs%2BYVsOFK2CLc%2FVMFQ1Q0D8YbiqimBafREUDeyoheDnyEdvPzeYUS5yxYw1eoIvVBTj1IV4fQTqOE3%2B42Xr3SLrNqTieWPSA7lwI%2FplSyNNR9jAikIPDQiK2UcgepIGb9yweCE%3D&allow_caching=true&sz=w512" alt="Professor Aéreo"></div>
+          <div class="body">
+            <h5>Professor Aéreo</h5>
+            <p>Inventor excêntrico com engenhocas peculiares.</p>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="card-personagem">
+          <div class="img-wrap"><img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUyti9WtgvTHZMXK4eV3qjCixQfeNAs0EH0s7YbddDbzuCdwAufG5CJs4vDdavEYqpXIuMkGWFtQj%2Bl7e44k17SWIJy%2F84mBBx10IkbmPpVxs1rr6o9Yo0qiDMfeogPNxOMt5xbcoatFtdxwK7gcI%2BQFiZ9J9RY%2BYsMbbIF9mlLGO%2FtjN1v2mKKgSehC28F1Hr1AeHj1hohcJJWwkbwHKDzXquQmAR%2BzcqiN6r7tcZJo1RPfAI2cUsiOaVB1oK2nF%2BXq5J8%2Fqm11ElFu%2FWhT%2BmQAePtXMljKfYErdEZjOERbvqLHdyO%2BVdj40L%2B%2BplsLTd%2FN3N6rnBBe2OA9qyyPwwnru0bocS7NgEUBJya7ec7wDn074W19I2mVMS7jngMNAu2TLzpN4SCQFyXiXJRldjEybVXVIIIfKbAAOQn28yeU53yvKkzaqCe9hMk7eMv%2B4xLnGy6v2qxD%2BHcXhTDK99yNbVEj7F6W47W%2FVMu1gaB14P%2FcOE0xT4Qy13CA6lE9rgOJ9kmvbxFAs7w9UN0Bplttoe4lsnb8STFxyGNwySS2I9m0m8YN5Pr1Yq6bI6Av1R%2Fg7Wi%2Bk3LYJ9qmZVs&allow_caching=true&sz=w512" alt="Irmãos Rocha"></div>
+          <div class="body">
+            <h5>Irmãos Rocha</h5>
+            <p>Dois homens das cavernas com força bruta e um carro de pedra.</p>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="card-personagem">
+          <div class="img-wrap"><img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWeQgaQIQzp7wKAffGwFwlNbkVch1TE6vzU%2BC%2FHPeHCs%2FkD%2FicZ0Ad1VyGLUgRIBVhX%2F7v3UkMDFwF4DRfBN1NuB6qKoyKSMO27vw3bu9HMZxVCXd%2B9BPhsxdLwAufaJmyIbAUZwoXHuVJYYmPUqzJEv8Xb0vNhrLsL4EQ5Erx7xb0PpapJJDCbsWlbbWbpr%2F%2B1K0N0aP5dliQJFqE60Ilksp5tKn%2FCdX7xaGrBLDHWkFcybNY7ldBZBkuQerZoG9N9UooK32WpCnCVw4uwtjC%2FxBLGIUX%2Bfea%2Flz8QrwB3U4hXRxffXKIOvWQFEJHIDFR0RRhkl0Ipqi5m6M5pmBjhpAfBKxwnFt87pLntG3T922uxGNbtw4vduQtzPGSyQJ0UQyUKZMmIdMiQJS%2BBFRPnkFe2x2Pt3yqk3U60ZB8jt7ZVXOkVCs%2B%2B4XISpA05SpZ%2BVynbwPCIi9uys6biRhdaA6Vjxu7b4WT5tyM51HqgJpkaLXX3ou7bEQBmP%2BaGPNX2ojOrmWw%2BJxe8ihyAkovqm3V5OM8q4iPzIwnzIAyBMHd2IgTBCXNqoOZ2aglvedsFRq4Mworn4fFZ%2Bi2PWED%2FSRHWsBQRz98mvA%3D%3D&allow_caching=true&sz=w512"></div>
+          <div class="body">
+            <h5>Peter Perfeito</h5>
+            <p>Vaidoso e elegante — carro sempre polido.</p>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="card-personagem">
+          <div class="img-wrap"><img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUVD4MZfFsji4BTKRv2pvo%2F6miq6zQ7bewiNPrnxEf0FuTiuzeN2v%2BWNe5MgHUh02VdB%2BQFmyVZq7HaUGOxR10CK6Ru0EDBdhNwchwWuF36zS%2BlMqRjBGPF1Ut7wmRaFpZfu2TmiwkNnuTsGnRv3xOAxUqVFXaB1a8eilF%2FXxLN%2BT8ppHTXBUYGcqHS1mZPi504wsPWx9ivlmCdcQqsoD65QW%2FuRAZb62aB%2BeOKLKI0lToGAuBYsF1EwgJW92Ks2v8km1Qs3cxb2%2B01IpIEY3npzae8v0oF9AV%2BC3DhU4unyBAIG4y7FSO7waJZ9qcCvyn%2B9lMrYyjUdBcC9A5AMCx%2BV7v6KyCJoTfv8l0zNrXZQAQrvPeZGhqScJWw91roIQQBTgbXlzJoU6UZ7kG6Nq8GXnUharhzPdXZ8SXaX%2FtXgswwTEnBeEMkESeCnq%2Bkag%2BAU7LqNH1WIH6isnkJepfTAsc5fG3CRCOR7rfZ15yX2RugcdJg9l1oEJJZmdOnVjlzmLLKxAVD360YM%2FQ%2BjyuXyBsY%2B%2BYMtixEjxtw18qAUEzWza%2F5VBrM0HDYh%2BSyRY2tmur46ZH%2BuCsHFaLXqfQOfL7iNz5UXcxD7Q%3D%3D&allow_caching=true&sz=w512"></div>
+          <div class="body">
+            <h5>Tio Tomás & Urso Chorão</h5>
+            <p>Equipe robusta e com espírito militarizado/experiente.</p>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="card-personagem">
+          <div class="img-wrap"><img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEXLWYmR9DmYy8ce6f8t8X%2FQT5HT5JMwJQygJDSjkbdeMGP5fOV8NSc3cDmgSf9CxBg2nE%2BMDorrOEYLPPAgaEoIav35re49QZcAqLe8ivoEEjp0Xu7KXRbeqAfyhnTmc7yTOEkbD4a7VyrYVwDMosT1KZa80Hawe9YVC3I4gGhTsD5LAKrsicCTrLZ03iEnZxFelUHxYQHyRSRtdKmrIFWv9UELMKMWkMtPobVCzt7C9kNCtVsKAp21QobBsptsYnczq8XKGJQxPI2iaq%2FjbN2O4PRyP7JEIQuF70R9GOlSB4b0YF87VWhwKpIQ5gc4OR9ikDCCsBHH%2BFXP%2F5bth7P%2B54nzjxiZQPuGy%2FMdK%2FMFdKyWNsYQuXJ3k0qYf01EDJ7cS793OoJN43958IBJQhwz1Bc3sfbv%2BJJZ6fhyiTpAZrCnW5BuAyOs%2FMXCvlaQ9HaergY0Y9Jqx%2Bs1ITNAhFDSCA4WIUPjyrjqAZqJ%2FbpaP54gjaqfm7Vh7fFLOEEllo6wxtkx8S1uLCGV8nHYdgOmQG1p%2FZ6bwh90AMMDZsmt%2BaGeYGBXtlw2i%2F23%2Fr2CEhhawAud%2FoqNTqxN7jJ%2B95wXXZcMqZ6Y8WcrXL0%3D&allow_caching=true&sz=w512" alt="Barão Vermelho"></div>
+          <div class="body">
+            <h5>Barão Vermelho</h5>
+            <p>Aviador extravagante — sonha em alçar voo a todo custo.</p>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="card-personagem">
+          <div class="img-wrap"><img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEXD6xgjZ%2BdNh1weBG9hCx6fDj9OOVfo6%2BsqOwMWM%2Fn55a6H33uS2k6TAUhym8std0pa49TzmpFu7ML0qPnrpnvaalrN6WSfX9X8DwacXacOCA4iBjIwE9IaQo8y61T3qHfGeLq%2FhfhMAZdweDKLxwHomqZbwiDq5%2BTubJyhZbCVHPAJtU59x%2B7%2Fbtdp%2B7Fy11zpzIhu0D%2B7YoJlMuYuCxKUF4tCs4M2uIIuylnuhC3aQBTqdkYk%2B%2BnH0C17vtRWZvna32AVhHtaesdxWEdIk5CXSkSMD%2Bb6AquzI%2F2XF7ODGyTKHXo4SnDRv6KkKB7SG4jzTdWHOE02XAyfrbAfkz4gbuwiH4ezoVkPC8D%2FEXA1VUaVpdV8S5zobeogGn%2F1dekZvBoIvo5GBfpb3GYh7Tl0KAcL8UZ%2BUYxv6fBCqB593TvEk3OrQ0u%2BmVpHfRB9Xf6flDRidXyAo6UPlEPhxCwO1u01lXDy6eV8P3zVKhRQdPsg3EjWKDVpYdKyM78sFSTXtTBOYMNa28Ox0GJqBgJBhdbAqFyAF2jiWXPGbxB5Aiuyk%2Fu6h2RJTfZERsBivIpW0aq%2FCKVg3xmTRwwHnuFM8TP3FINcoafvVn0%3D&allow_caching=true&sz=w512" alt="Rufus Lenhador"></div>
+          <div class="body">
+            <h5>Rufus Lenhador & Dentes de Serra</h5>
+            <p>Equipe rústica que "corta caminho" literalmente.</p>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="card-personagem">
+          <div class="img-wrap"><img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEXkuB2lpSgeBj7bfyNe8IfDXK8OQfU4rrJVLtZM7WLiHW5ZeufFt9zZ0YN81NctdhZo2wsSxEkg8TxKEpjNf4MLfFSpMhnN46DosWLJr3HJjS9CYzIAH8U10nZFO%2BNeL2cWead3HjeHRn2GtOrwrGv%2FtIfw81Wt0m54BQIH3VhlZ3lXuvFoLkMqtMTowzJDXVWX2GCvxBe5cub6EJjN15x3ivnOC%2FcSBeQkGjJsh19NOfS%2FXKaNYV0y1GL94RmQZvA1jwhDf30blr9708BrX8uwMwLkIBtCioOlMZ34OHN4c7LXohKUa3Q5A9%2FIpcyi9SMLBPNiOTwuPaAfiD4I1dTX%2BfU8GiFtN12EdnVVZV7g0kdeflGqQN%2B3EiWOf8FHorTRd7MFyTIynOyQ309xrFs%2B4svvMMsG77S2J9sXe0WubalP1cW3FkbquTBTaDvkk9mVab29%2FpSRwluAw5kVzrfDTLuOsiXEOx%2FtIyfDLE7MCU4cGWiUuPg3cB%2Byntnwk%2BHzkZN6RBSXChEDBLnH5yVHXqpvy9%2BbxtmjkdP%2BwQKd9aqwTxwDLBjXG8mP8%2Bq0nESe56zSByJB6lRyV2MyiWrUpTKREPMOe%2FXIFA%3D%3D&allow_caching=true&sz=w512" alt="Sargento Bombarda"></div>
+          <div class="body">
+            <h5>Sargento Bombarda & Soldado</h5>
+            <p>Equipe militar em formação — disciplinada porém caótica.</p>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="card-personagem">
+          <div class="img-wrap"><img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWnumTCXOsc9jrYrQXsIKSwKNkuJt7X62Ix0R00dIKVd2ZUG0YVbuu01ibmF10W%2FyygnfPdKmiUQX0mL5bCYrnbpA%2BjeLd6iIeDyq6CxkY%2BmE3%2BnUf1vF5hZiIkXR5u9W8fbMHomkJLrDHIzi%2B6m9IRoRI%2Fo2nFHH82IDkpD5SqEEzTSvGwK%2BgyyIii1B7ypoofsnL9dH3O3bFVSR8%2FeF5AJ6YJGTyWx7kuFhYEcM2elsSu9%2FmUhHEgUAfmixjAmMPQ6UIMuXbfnfMteMeB3RLNVCQ%2BhxYx%2BE1T2w8JiOLwnAymDi%2FH3bSopHwu9eFNm3OCNSNE8Ky4zUeLDa%2FUoqaKLF355qYqoVoB%2BJIN%2FE%2BoQjZptaK42dG%2F%2FtvQe8c8Q1V5fDuqmFzUnutMEFRilfN5tjCMXUHEEkXvkSbBmd0Gs0L%2BOJNMTWMqoHFVbo87DPrM1a3mHYjQyKeI4aSij2EfkKzToaJTpZFswaUNMeOKfyOMiFPZybGOgBbIWuAjILnQQfjI5HY%2FmbKc0sGwMvrJBEjghVHxw0JSo7QJhfp03rzJoTFzcFIUgdoLTdspi%2FMuapXVMiuQwFkm5LjSAKQHPx1xCfl8isbpU9k%3D&allow_caching=true&sz=w512" alt="Clyde & Quadrilha da Morte"></div>
+          <div class="body">
+            <h5>Clyde & Quadrilha da Morte</h5>
+            <p>Gangsters à moda antiga — procuram atalhos e truques.</p>
+          </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="card-personagem">
+          <div class="img-wrap"><img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEVgoq4YU4wdDUA%2B5pc%2FgdzC2yhmsS0wCoxwrvxx%2FMbis%2FxlVYenCyMTvIn2g8xRuEJ4ewMk%2BOwa3d2hdp7vmFhDkMayxIGkfigLf7UtlgYCQ0i4%2B8kXeGdEKW%2BxC4mXo6bw%2FqmTQ%2FGTOirxvXIo3sw2rhnr68mef6X63m8vZ7ZbtMNe8DQm52g9QcPVVVtbYL%2BSbpkFWxA8pDIr1nRryAs0OoFzYBLwBmEmJqRHwMbc7eTbqPT0PtT8do5KVYmCLPj2nQZJA6q%2BnZO3SMZ1Ew8Qeyo1aVbtyLdNiykRfmNw%2FyRg9kGMP8HRxOXM%2Bd3yRvMSEKAMopKYW1qx9uApxDqvFfJkfUNaeKr43AO99WekXK9NiVF2j27GK7tYRfBkyYy9Ode5ZRTU7SEYteedqBtwvsFM7zVImKsxnqdhTzZuS5Zqo0nvwvUbkCAthJ5tCo8g2Hv4UTPauFVESuPBRI2OqxvfUlI2K2KZNSuFPfJ7zdvR3GdtMSssUlULFm8hxldO%2BABB8rp8t3rjqkcSJ8foa%2FbLBnzy7sNnRjnD01Db%2F2AF6XSG6Bpul1MLYauxIe%2FD%2FHLUxHVkup7xYwrTXxk%2BbKn9I80PySApXkX9hVK%2Bsx5Gwc2O26bZ2atc1290Mw%3D%3D&allow_caching=true&sz=w512" alt="Rocambole e Irmão"></div>
+          <div class="body">
+            <h5>Medonho & Medinho</h5>
+            <p>les são uma dupla de vilões: o Medonho, uma criatura alta e encapuzada, e o Medinho, um ser pequeno e roxo. Eles pilotam o carro chamado Cupê Mal-Assombrado, de número 2.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+  <!-- Footer amarelo -->
+  <footer>
+    © 2025 Corrida Maluca — Todos os direitos reservados.
+  </footer>
+
+  <button class="btn-voltar" onclick="history.()">Voltar</button>
+
+  <bakgrond  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

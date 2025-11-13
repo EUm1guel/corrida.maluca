@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contato — Corrida Maluca</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  :root{
+    --red-mario:#E4000F;
+    --blue-mario:#1C5ABD;
+    --yellow-mario:#FFD700;
+    --bg-top:#fceabb;
+    --bg-bottom:#f8b500;
+  }
+
+  body{
+    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+    background:linear-gradient(180deg,var(--bg-top),var(--bg-bottom));
+    color:#222;
+    min-height:100vh;
+  }
+
+  .topbar{
+    background:linear-gradient(90deg,var(--red-mario),var(--blue-mario));
+    color:white;
+    padding:18px 0;
+  }
+
+  .brand{
+    font-weight:800;
+    font-size:1.4rem;
+    letter-spacing:0.6px;
+  }
+
+  .card-contact{
+    border-radius:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.12);
+    background:#fffdf9;
+  }
+
+  .accent{color:var(--red-mario);font-weight:700;}
+  .btn-mario{
+    background:var(--blue-mario);
+    color:white;
+    border:none;
+    transition:0.3s;
+  }
+  .btn-mario:hover{background:var(--red-mario);color:white;}
+  .info-key{font-weight:600;color:#444;}
+  .small-muted{color:#666;font-size:0.95rem;}
+  .copy-btn{
+    background:rgba(0,0,0,0.05);
+    border:1px solid rgba(0,0,0,0.06);
+  }
+
+  footer{
+    padding:18px 0;
+    text-align:center;
+    margin-top:30px;
+    color:white;
+    background:linear-gradient(90deg,var(--red-mario),var(--blue-mario));
+  }
+
+  .btn-voltar{
+    background:var(--yellow-mario);
+    color:#000;
+    font-weight:600;
+    border:none;
+    transition:0.3s;
+  }
+
+  .btn-voltar:hover{
+    background:var(--red-mario);
+    color:white;
+  }
+</style>
+</head>
+<body>
+
+    <style>
+        .topbar {
+          background: linear-gradient(135deg, #ff0000 0%, #ff7b00 50%, #ffd500 100%);
+          color: #fff;
+          padding: 18px 0;
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+          position: sticky;
+          top: 0;
+          z-index: 1020;
+        }
+      
+        .brand {
+          font-weight: 900;
+          font-size: 1.6rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: #fff;
+          text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+      
+        .brand img {
+          width: 45px;
+          height: 45px;
+          object-fit: contain;
+          filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
+        }
+      
+        .btn-voltar {
+          background: linear-gradient(45deg, #ffd500, #ff7b00);
+          color: #111;
+          font-weight: 700;
+          border: none;
+          border-radius: 30px;
+          padding: 8px 20px;
+          transition: all 0.3s ease;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+        }
+      
+        .btn-voltar:hover {
+          background: linear-gradient(45deg, #ff3b00, #ffb300);
+          color: #fff;
+          transform: scale(1.05);
+        }
+      </style>
+      
+      <div class="topbar">
+        <div class="container d-flex align-items-center justify-content-between">
+          <div class="brand">
+            <img src="https://cdn-icons-png.flaticon.com/512/743/743007.png" alt="Logo Corrida Maluca">
+            Corrida Maluca — Contato
+          </div>
+          <a href="index.html" class="btn btn-voltar">🏁 Voltar ao Início</a>
+        </div>
+      </div>
+
+<main class="container py-5">
+  <div class="row g-4">
+    <!-- Informações -->
+    <div class="col-lg-7">
+      <div class="card card-contact p-4">
+        <h4 class="mb-3 accent">Como falar com a Corrida Maluca</h4>
+        <p class="small-muted">Abaixo estão os principais canais de contato. Clique para ligar, enviar email ou copiar o dado.</p>
+
+        <!-- Telefone -->
+        <div class="mb-3 d-flex align-items-start gap-3">
+          <div style="min-width:130px">
+            <div class="info-key">Telefone (Central)</div>
+            <div class="small-muted">Atendimento comercial</div>
+          </div>
+          <div class="flex-grow-1 d-flex align-items-center justify-content-between">
+            <div>
+              <a href="tel:+5511999123456" class="text-decoration-none"><strong class="accent">+55 (11) 99912-3456</strong></a>
+              <div class="small-muted">Seg–Sex: 09:00–18:00</div>
+            </div>
+            <div>
+              <button class="btn btn-sm copy-btn" data-copy="+5511999123456">Copiar</button>
+              <a class="btn btn-sm btn-mario ms-2" href="tel:+5511999123456">Ligar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Assistência -->
+        <div class="mb-3 d-flex align-items-start gap-3">
+          <div style="min-width:130px">
+            <div class="info-key">Assistência Técnica</div>
+            <div class="small-muted">Suporte a equipamentos e reparos</div>
+          </div>
+          <div class="flex-grow-1 d-flex align-items-center justify-content-between">
+            <div>
+              <a href="tel:+5511988877665" class="text-decoration-none"><strong class="accent">+55 (11) 98877-7665</strong></a>
+              <div class="small-muted">Seg–Sex: 08:00–17:00</div>
+            </div>
+            <div>
+              <button class="btn btn-sm copy-btn" data-copy="+5511988877665">Copiar</button>
+              <a class="btn btn-sm btn-mario ms-2" href="tel:+5511988877665">Ligar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3 d-flex align-items-start gap-3">
+          <div style="min-width:130px">
+            <div class="info-key">Email</div>
+            <div class="small-muted">Suporte e dúvidas</div>
+          </div>
+          <div class="flex-grow-1 d-flex align-items-center justify-content-between">
+            <div>
+              <a href="mailto:suporte@corridagames.com.br" class="text-decoration-none"><strong class="accent">suporte@corridagames.com.br</strong></a>
+              <div class="small-muted">Resposta em até 48h úteis</div>
+            </div>
+            <div>
+              <button class="btn btn-sm copy-btn" data-copy="suporte@corridagames.com.br">Copiar</button>
+              <a class="btn btn-sm btn-mario ms-2" href="mailto:suporte@corridagames.com.br">Email</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CEP -->
+        <div class="mb-3 d-flex align-items-start gap-3">
+          <div style="min-width:130px">
+            <div class="info-key">CEP</div>
+            <div class="small-muted">Localização da sede</div>
+          </div>
+          <div class="flex-grow-1 d-flex align-items-center justify-content-between">
+            <div>
+              <strong class="accent">01001-000</strong>
+              <div class="small-muted">São Paulo — SP</div>
+            </div>
+            <div>
+              <button class="btn btn-sm copy-btn" data-copy="01001000">Copiar CEP</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Caixa Postal -->
+        <div class="mb-3 d-flex align-items-start gap-3">
+          <div style="min-width:130px">
+            <div class="info-key">Caixa Postal</div>
+            <div class="small-muted">Para correspondência</div>
+          </div>
+          <div class="flex-grow-1 d-flex align-items-center justify-content-between">
+            <div>
+              <strong class="accent">Caixa Postal 12345</strong>
+              <div class="small-muted">CEP 01001-000 — São Paulo — SP</div>
+            </div>
+            <div>
+              <button class="btn btn-sm copy-btn" data-copy="Caixa Postal 12345, CEP 01001-000">Copiar</button>
+            </div>
+          </div>
+        </div>
+
+        <hr/>
+        <div class="small-muted">Endereço sede:</div>
+        <strong>Avenida dos Jogadores, 200 — Centro, São Paulo — SP</strong>
+      </div>
+    </div>
+
+    <!-- Coluna direita -->
+    <div class="col-lg-5">
+      <div class="card card-contact p-4">
+        <h5 class="accent">Ações rápidas</h5>
+        <p class="small-muted">Escolha um canal para contato imediato.</p>
+
+        <div class="d-grid gap-2">
+          <a class="btn btn-mario" href="tel:+5511999123456">Ligar — Central</a>
+          <a class="btn btn-mario" href="tel:+5511988877665">Ligar — Técnica</a>
+          <a class="btn btn-outline-secondary" href="mailto:suporte@corridagames.com.br">Enviar Email</a>
+        </div>
+
+        <hr/>
+
+        <h6 class="mt-3">Horário de atendimento</h6>
+        <ul class="small-muted">
+          <li>Central: Seg–Sex — 09:00 às 18:00</li>
+          <li>Assistência Técnica: Seg–Sex — 08:00 às 17:00</li>
+          <li>Email: resposta em até 48h úteis</li>
+        </ul>
+
+        <hr/>
+
+        <h6>Localização</h6>
+        <div class="ratio ratio-16x9">
+          <iframe src="https://www.google.com/maps?q=São+Paulo+SP&output=embed" style="border:0;" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Toast -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index:1080;">
+  <div id="copyToast" class="toast align-items-center text-white bg-success border-0" role="alert">
+    <div class="d-flex">
+      <div class="toast-body">Copiado para a área de transferência!</div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Corrida Maluca • Todos os direitos reservados
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn=>{
+    btn.addEventListener('click',async()=>{
+      const text=btn.getAttribute('data-copy');
+      try{
+        await navigator.clipboard.writeText(text);
+        const toast=new bootstrap.Toast(document.getElementById('copyToast'));
+        toast.show();
+      }catch(e){alert('Não foi possível copiar: '+text);}
+    });
+  });
+</script>
+</body>
+</html>
+

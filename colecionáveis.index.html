@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corrida Maluca - Colecionáveis</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Bangers&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #FFECB3;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Bangers', cursive;
+      letter-spacing: 2px;
+      text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      background: #D32F2F;
+      color: #fff;
+      padding: 15px 0;
+      box-shadow: 0 4px 15px rgba(172, 45, 45, 0.4);
+      border-bottom: 5px solid #FFC107;
+    }
+
+    header h1 {
+      font-family: 'Luckiest Guy', cursive;
+      font-size: 2.5rem;
+      text-shadow: 4px 4px #0000005a;
+      margin: 0;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-weight: 700;
+      margin: 0 10px;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #FFC107 !important;
+    }
+
+    .hero-section {
+      background: #FF9800;
+      color: #333;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero-section h2 {
+      color: #0D47A1;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-section p {
+      max-width: 900px;
+      margin: 20px auto;
+      background: rgba(255,255,255,0.8);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .produtos {
+      background: #FFFDE7;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .produtos h2 {
+      color: #D32F2F;
+      font-size: 3rem;
+      margin-bottom: 50px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 20px;
+      border: 3px solid #D32F2F;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+      border-color: #FFC107;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      border: 4px solid #D32F2F;
+      background: #FFF;
+    }
+
+    .product-card h5 {
+      color: #D32F2F;
+      font-family: 'Bangers', cursive;
+      font-size: 1.5rem;
+    }
+
+    .product-card p {
+      font-size: 1rem;
+      color: #555;
+      text-align: left;
+    }
+
+    .product-card .price {
+      font-weight: bold;
+      color: #1565C0;
+      font-size: 1.2rem;
+    }
+
+    .btn-buy {
+      background: #FFC107;
+      color: #333;
+      font-weight: bold;
+      border-radius: 8px;
+      padding: 10px 20px;
+      text-decoration: none;
+    }
+
+    .btn-buy:hover {
+      background: #009F6B;
+      color: #fff;
+    }
+
+    footer {
+      background: #D32F2F;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      font-weight: 600;
+    }
+
+    #btnTopo {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #FFC107;
+      color: #333;
+      border: none;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 1.4rem;
+      display: none;
+    }
+
+    #btnTopo:hover {
+      background: #D32F2F;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <h1>Corrida Maluca</h1>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="5index.html">Início da Loja</a></li>
+          <li class="nav-item"><a class="nav-link" href="masculina.index.html">Masculino</a></li>
+          <li class="nav-item"><a class="nav-link" href="feminina.index.html">Feminino</a></li>
+          <li class="nav-item"><a class="nav-link active" href="4index.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Seção Hero -->
+<section class="hero-section">
+    <div class="container">
+        <h2 style="color: #FFF;">Loja de Colecionáveis Corrida Maluca</h2>
+  <p>Reviva a nostalgia e a diversão da Corrida Maluca com itens de coleção exclusivos! De miniaturas detalhadas a pôsteres clássicos, cada peça é feita para fãs que aceleram de coração com Dick Vigarista, Penélope Charmosa e toda a turma.</p>
+</section>
+
+<section class="produtos">
+  <div class="container">
+   
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+      <div class="col d-flex">
+        <div class="product-card">
+          <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUg1AbdyTzGIXWKg3FH1SnLsBppl%2B6Re%2FwufVYe6JXb6MS0nfJn9YZioecFTJ2ycWVJc7Q9FaA4k%2B4aANiJhNrzZIXAehNFwISqlEwVn3SoU97wETmVOfYBqbbtmO7aMIc57f9eI6tasqunhL2M4CxL%2BL8mSQOVYamKWFGqIOmxsAre2t%2FvsxVu%2FB3%2FqYpby0ppzYzufnJ%2F5C%2BjlxuA%2BahawMRU1F2scQMfLazG6QP1FeECLYqQFDDnQ3Rjb7rgMYkfiNRZfTD7PVmQjJWyvyI9hfnf1og%2FqxLMOtyWjcLWAzmGzAJUmQ3JMOoenVsVZt2ZlNSmssU%2BjHQ64y4uTTjASzinYjnVCRVy320dlk1t6W9aWCG1wHLD2Z8QajUDUthro7i1J3d1KNJNXXpd%2F00L1CURhs5GlrdFmfsBeE3jOxef3rI0ZN0XreyUEcaUNLGMOwQhi0ViUa5NxS1uP%2Be2njz4cxvHaFI5hGe23dHdg9V9XTFCcHf687Bq5PbGBeUP09k3VAa98%2BBMNB%2FJWD60ejNKuE49SqcRNBqsd9oTkI8ESvhg1fIiEKgAA8foiOL1subGBPPqwwK5%2BXGFYQ%3D%3D&allow_caching=true&sz=w512" alt="">
+          <h5>Miniatura Dick Vigarista</h5>
+          <p>Miniatura detalhada do vilão mais famoso das pistas, com o carro Máquina do Mal.</p>
+          <p class="price">R$ 129,90</p>
+          <a href="loja colecionaveis/miniatura.dick.html" class="btn-buy">Comprar</a>
+        </div>
+      </div>
+
+      <div class="col d-flex">
+        <div class="product-card">
+          <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWYK7p5xMTXz0%2FZfM%2Fe7Fv5JY9HCm5HTXPckDc8RVzf6j7AGzg8%2B6W8Z3ZamwL2tk2UP739TjEwd3MlhZt2HLEEVuzBuQg1s496kKF8vXZPGozIuZth8tGF0kxM6%2F7g9doDnWzTNKyKFCSCfj62Wp3T1fCednw%2F1DzB4rZbDqJKqxo7nbKhl8TK%2BpbndCxJOCZaMQPQ2ZaQgn3eVo3MzOHWzpnVop%2B0oKUVBXrptfuo%2F%2BEqImlaZHQAQ7Wwc7bOREn%2F7gLnep%2FgjfWFe8OBhKWswAwPccui8OQZRAf2HMiZwl5fX4Wqr5vdEhCs0S0OWBRz1L6wfcSYYdAVl2zAy9JjnIL9gGcrB0hGlCxDZKngetivlWllgogeYpX9HrFrJmyiIeivjW%2F7%2FMilYvkhN4%2F%2BuJGkRxMhQwoxaWLZg9eUjx5AWXq0EvBxzZTDqxX7hdkq6h5a4WjxlPh%2F1KgeJS9Jh5bGqqFQjdUbHEbvsyMhe%2B%2BHuuqbIVmwPYCK3iCvO3j60ysTBO0A1Hw5cjZlP66nIGmTobgbd%2Bpg6vW4vcNucpWUT0Ilb3TQCrAgzqC3HdpgtoQ%2FsPe237VeWBRzYw%3D%3D&allow_caching=true&sz=w512" alt="">
+          <h5>Miniatura Penélope Charmosa</h5>
+          <p>Modelo exclusivo com o carro rosa original da personagem, feito em resina premium.</p>
+          <p class="price">R$ 139,90</p>
+          <a href="loja colecionaveis/penélope.html" class="btn-buy">Comprar</a>
+        </div>
+      </div>
+
+      <div class="col d-flex">
+        <div class="product-card">
+          <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWvR0CuaRcFzQSxXFtkWSMGaeoLoxMudeNikh3dGkGcsVZUXcYXnDCQWdyraCVdyRNz4ljr%2FTvgD4dqo3ClJQjekcl0brZigH4ylyCAh1MwnTQLgZs78%2B6bRIfLU4LVibuTv0azL%2FagZ5%2F4xqR4%2FLeErL9vf0Ks21bXCNBVgBKPqCCcdAJjylrWayX2wYtQy5I%2B0LsOfRuBuCtIhKxAVUi77Zf2a6fBbCf2fzHygzWkxq5JxTaM%2FON%2FeuVK1Acs3B3DtqaXa5%2BkRFUdUZeEpA%2Fvyz%2FmFq2JWuuDj2T3nQnNsYmn1UPr%2Fcp3xd%2F4aF9JdF4m0%2Fu4BgWvi7zQPL3YdcEXq6bynnqA63dkX%2BmiAE3BTNNSVhLU8RaXS6E4v0ZwNQj020RITEpIpiJMyEaRDe2c3dRjSOO9mW%2Fugz8fQ%2FJa0Rked8ZDL9vXq99m2Gi%2BeB9ROyECoyqB5%2FV3Pbc%2FYnaR9d79YbRC4CnZCFw9onDH53ILVZJ6279FhLJvB6Lt2QpGOTWYB1CtgllZMmMWzFbtpwGOLi3wz7WQw8n0SgzvHoTYOvKfNrzIfL0l7cFJHg6LVV9%2FEx8DEAIL%2BMsv&allow_caching=true&sz=w512" alt="">
+          <h5>Caneca Corrida Maluca</h5>
+          <p>Caneca de cerâmica com arte retrô dos personagens clássicos.</p>
+          <p class="price">R$ 59,90</p>
+          <a href="loja colecionaveis/canca.html" class="btn-buy">Comprar</a>
+        </div>
+      </div>
+
+      <div class="col d-flex">
+        <div class="product-card">
+          <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEV8K%2Bb8lKtbO01bIBuoiK71k48FuD16VFvRRCFwt%2BrDgW%2FesFf%2F2%2FMx7z99EoLrOJD4y%2FK1zfkj49Uxuc1zx%2F01%2FpwN9%2F51Xc6qvBoCqjqKOJIoqrZxzi%2BRjx5r%2FsnshltT1XfpMMSpkumy1%2BTQtUHN0%2BXIBRpV6XMXq0ejrecgVB7HWmH1XQMEM%2B%2F24O%2BVzvEmKb%2FYlkFvgqG%2FsF0%2BZFDJdhmThinpQqiRFl5gtC7jmenAYlDQBevqWRu8Q%2BxprDI4qim6klDu2Zk1QJeDScPVPrggs7cQAw1ZVTiKT5PDbXbayv8XNuILnI6ThQCQtGIPC7BlMKdY%2BczPdBq%2BWM6ziqARLLM9PVN3KTLOz5fuyevASf5rtDafwQbcUk5qri4e6xnIYCmEGMW5iZICTu7j86yulhBIeOWbWWPsWgGhpVMKpEmdmUyrWtagddkurRGYGnUymcHOoKDJ1VuquVo4wvbeAA%2FHgfKELVa74iL88BCaramNqDwee1TEJcQrDg4CUhV7Gfnps5KJOM%2BzGTxVI%2FbA55fEQ1Jxzp2t01E4pczqcQbKbjk3Xu2Q%2Fp%2F%2FZBl4YjPAuJyH5xD%2FSsKt&allow_caching=true&sz=w512" alt="">
+          <h5>Action Figure Mutley</h5>
+          <p>Boneco articulado com risadinha sonora! Ideal para colecionadores nostálgicos.</p>
+          <p class="price">R$ 189,90</p>
+          <a href="loja colecionaveis/boneca.html" class="btn-buy">Comprar</a>
+        </div>
+      </div>
+
+      <div class="col d-flex">
+        <div class="product-card">
+          <img src=" https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEVkNl5OO%2BRdacbhmpO7%2F1q%2FE%2FPhXI2LdByM97oGzBols%2FXrY5N4jeaMCGYwGZvKLoFXIdJtu7ds5cJ5bgFiBldWS59vyel0ARJN8HoyYJ6d66geQ3uZWgetxBpNwHiE5X2W5K9ggPDe9UFFY7LkNYDAbBcq7ASH%2FFqwppgyNjWz13iLkVOZldgXIVFkbqdsCL9hTW7TiXT%2BoftLGoLnI6fCOXgUbOQ0R8WF9saRZBaA6%2F5GbP5J%2Bz1NzZjmPn2qlGqqHq8ekpqSuW22nxBAcXz5ZIZ6BMljCUtq4OKJISeIK3wCoxXzSK8Vfjg2535W5JvHrmSjsj659qHm%2Fr61ul%2BPQ997%2FC75UX%2F3uDU%2B1CQ2X4B2w4vgRhX3LGZJvTdIQ876%2Fz6XrzjmxfngYSXXpWSiyBqaknZkFwcFCAKnhLoBOhU%2FP2nGEYGenL2l5%2Fp4RtqstV49SdofhM7g0tjEBxv3Ah8bGPjYkdif0XL5EuTp81Y6uFe%2FTVremymi29%2FWURvJh%2FRrfpcBizkeysHprzENmKSvxNXojl5udIto5O%2Fo9bsMKnTL47nixjgeK2C%2BsB8fuDJbihPxzOtjNmmz&allow_caching=true&sz=w512" alt="">
+          <h5>Pôster Retrô Corrida Maluca</h5>
+          <p>Pôster de parede com arte vintage da série original dos anos 60.</p>
+          <p class="price">R$ 49,90</p>
+          <a href="loja colecionaveis/poster.html" class="btn-buy">Comprar</a>
+        </div>
+      </div>
+
+      <div class="col d-flex">
+        <div class="product-card">
+          <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEVUDWZuHVjvSlC4pZGcEqxBVCQY4wZuFheKrjf%2Fnah9yLyMYfgenpr0esbuMeCM2VYLrTphjaDXmE2W8GzTCx%2FUJc90EW33tU8MTHNzw%2FhPhw10DjOpR6ecScO22i2%2FBUUHLxGZghKHHZXPbEpwBJzGANipi6rrdSC1LRssOJ9f1ly0zkkTOIpa0WKCchw3xhZaZhWGCSXcZqGEU2xOE8OI95YHQBwnD%2BO5Ze6hM%2FquFfFlf3RWF9ifiw1M2L64bpp8ZSI%2FJi1URxQpu6j85LVT0cUGifvyoDjlVS6tqKHNihl2SxHixdNFO1639Rk1n4i443MVE4vWI%2BmkYouq%2BUncyvG%2Bw0eSNOr2gWfR91jel5YfSLLaZ0JVkIEcRpso8UmtWOq6tfA8QweGpQ9rktd%2Fj7SfgM1zW2Ha22RyqGcWuylaoh31c7j%2B8e72yS2PzDhjFodZRoHpE%2FLb3BpAAhpy7b3%2BzszcPSfRObUnFHkAmzkf9OTLAQVM5pLOLlULXBb%2BcAz4pHYASXY3c6iOIXwHzLIVkIewOiffR5CPkIdr89T79Yp40Mh5FLN7wF8Ydcp7%2FcJfwIzq3pSXuKvn&allow_caching=true&sz=w512" alt="">
+          <h5>Chaveiro Máquina do Mal</h5>
+          <p>Chaveiro metálico com mini réplica do carro do Dick Vigarista.</p>
+          <p class="price">R$ 29,90</p>
+          <a href="loja colecionaveis/chaveiri.html" class="btn-buy">Comprar</a>
+        </div>
+      </div>
+
+      <div class="col d-flex">
+        <div class="product-card">
+          <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEU1%2Bwsb3iizVZfqfiJV0iQSa2m9qeAX%2FhuD9af2i8FvwbuhvR7hcgxUU60iJeL%2FxEr2AwD4U4ZYQBeLdvjY7nLsk34hsfaL26ceBJOO3El3prZ3CelFWMcTPwZYKl8CT%2BVY7rDOvxxMT%2FU9XyrPbdW0dNwxDAWKaZJEG4JFHyG7dOrSM0Yi8ZyZhMzLX1prhyrHPT3PRNacw2qZZM2lQqkH47qz9ii8%2Fa5uAQaBkmMeFn2ipYAyxcKwWC6uDRFhtWXYueGr9qVRncmCfR49UrkVZIARxz4COipzvQZ4WoKGpUAuqgU4l8pI97OkDCoDJXM63nNX6p4N4o0WWaKaR4Fe%2BjI6b7SM2OXgkeolXiuMOTNT%2FAUCxmEBl8PeBFIkLhr0Cv4wzoISIpuFLDF6L%2Bp9SutB%2BsSu%2FVOaZd32ljODOhWo6nGK%2FPnRagNXA2N3uIWC%2BNrhQvq1dEwHDnAzUkiTbUwwCsSC2F5vV17u%2Fb%2BE7T2%2FddZDDm9UXDk%2B5lp11BnIUmTdxeaDBHaFD%2F0iUPDyrcNVxIOWFJr%2BVs2wQEacXbvNCrSMR1puM8CyyeTx%2FtG9b2KDdVTGIfppeoJC&allow_caching=true&sz=w512" alt="">
+          <h5>DVD Corrida Maluca Clássica</h5>
+          <p>Coleção completa remasterizada com todos os episódios originais.</p>
+          <p class="price">R$ 89,90</p>
+          <a href="loja colecionaveis/DVD.html" class="btn-buy">Comprar</a>
+        </div>
+      </div>
+
+      <div class="col d-flex">
+        <div class="product-card">
+          <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEX2YqP1Lh%2FJMp8hcMdCRLYPp4cr6YsAgklZ17QWMv9NVSa2lDXk9SbOc1bZAWsKUs2CC70fPBS2DRyoClWKEz%2Fj0W3CvXK%2B%2BfkhDcK29Mj3Vl3UNfJ%2BB3Kk1lSzsYn%2F1Y6zXuJ6qUrWdhGT1vMzy9Lk6aDTNNuWEZ8TucXyYNoXrMnw4%2FCvXZoEPf28GwH0%2Feg3GXQTYA%2B0wfX%2FuR6oygk5DWH7WAFfpI9DqunQem4f61QpA3T3o67af5yTda%2BpgHM6ibzfX4t9aweWEccdvfH66XYs6AM5jNmgjfVseKnao8ZzE2z%2FbyTHWiEGKVCxJBkPdvhEbqC3lm8KB5YqSO3Ck%2FBSOMrcqIBtQIT0clBjtFX6L%2F56tngIKqTWwvcRdxWnefEqm4HzPH2%2FxM4h%2BbzlHdvJtdb8Cc%2BSiV1xGmJV9KvM8nmgcssqMRxAu%2FpWtU4nQbKp1y2g8QE3r%2BQKxFbdxP%2FJta6rcXJ%2BxasF0EBHrRxZ7k%2BXGh3PHPyAv2UKtNgOFzY%2FW%2B6ywFL%2BTXbbj1XRBYrYc5hSCSeKfWkYIpe%2F48Gw66ALKLRYfajgMdUrJNNH9%2FVp4WwcNVELf1aZOQ%3D%3D&allow_caching=true&sz=w512" alt="">
+          <h5>Relógio de Parede Retrô</h5>
+          <p>Relógio decorativo com tema Corrida Maluca e ponteiros coloridos.</p>
+          <p class="price">R$ 119,90</p>
+          <a href="loja colecionaveis/relogio.html" class="btn-buy">Comprar</a>
+        </div>
+      </div>
+
+      <div class="col d-flex">
+        <div class="product-card">
+          <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEV1oLLKLA8r4Nxtq1%2BY7M1rUa1bc%2BoBIy2J8npwv431xRkxeoW05pZH%2Fr%2Bp39p4DYd1GKdtUnJYibOEQ7wlXFKN2aIEK0Tij1KKJ02mKyMHBJg2JNI8hEAcnmCETumQGB5yo0nMFUqkkfNgR8Xg7DReMKab1dcmoytXlbg9yqA8RIDPo49lVW59x%2BDkV8gcUc0qxtK5FTjqdM46W5hXeW%2BgdWzRTZw6rvGf6XVbW%2F9Ts%2F3YFNLxE6EEIoVynY5SqQiAxHR30Fex%2FFBTY%2FpliIv20hk9331wZnXm2%2BtJRs5g1nBnAMr0XbJ5dCT5fzHRn0ZFXvKB2J2Q1ysEjSYWHDVzuCJsucrn4Bx8Af4WcPQUivaQTt7%2Fqvi7AP6P03OoMJwfJa0ReM%2BItPe7k3QQuZxAYdJDnZlcu9J12sKhUhdYaU%2F4jKFFmhT4pdDj%2BSMh7HEiPQ5RlSD%2FRLiq0lrlPq%2FtKPq5ARaQAi6gJFM%2BCFO2H46itqs7Ea8gbBTmfaF3yJpribz90%2Fh%2BHfLRm2RBAqDYJI3Z5J4d6GfGxipRXa%2FYnjJ8ZW8FxabP6NiYfVELaHYVOGOp8%2BtVDjKr7WkvLQ%3D%3D&allow_caching=true&sz=w512" alt="">
+          <h5>Funko Pop Peter Perfeito</h5>
+          <p>Figura colecionável com acabamento premium e base expositora.</p>
+          <p class="price">R$ 149,90</p>
+          <a href="loja colecionaveis/perfeito.html" class="btn-buy">Comprar</a>
+        </div>
+      </div>
+
+      <div class="col d-flex">
+        <div class="product-card">
+          <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEX1ORaXbnghIZJmcucJnawAsJ2R5Q4tuHNro2PfuVGJ%2BzHHqo4lolxPcKZeCFbXHhIYOzk0IWttW970Pf8ABbtzab2ApakkIs7TlChLqqyJfQ8huBOHCa9IUxa90bCmnlw%2B0xmf4lI8VhZiMo4%2FVCBHNgVt5B4PJ5UBROVRPuJEmkLxs3EqjpYyqz88eZDaaHaIzIXtneaX9uRZfk3QDntcrJDxPIk6tK1jeFBK%2FI3zFw0Zn55oAOn6Bp2PZuUakiw19EBTDVRsurFhFQXhbTCsX%2Fkgl0HNCz5iJBr24TU4COKWxdfR%2FWv9aIXdz6BLkUW27mXUswQUuWOXiQogrNNMlRqN5%2B2Z%2F3Ohq073vLv8IOqFHxjRLepyluaKE11wk1UfE9bifnXilQSMw2h1rV1n5gIalexPM6cdsW%2FfpTVYsXsxMKjKFr%2FbYgtA6fP%2FdfyKBilxYDgRmhVZSYFzKxAS6DImILKd7eAJpy2VcSMArQq4ZhPWYSWwDFtaZWxr9XIDB1J1IJbe1bznOX0%2Fq3Exf39cPGfp9O4d9djSUkiJcAaBc2%2Fy4EiV0sbg8cwpA4KOYDpEZJ6Qde4wCd4%3D&allow_caching=true&sz=w512" alt="">
+          <h5>Capacete Decorativo Corrida</h5>
+          <p>Mini capacete réplica dos pilotos, feito em resina e pintura detalhada.</p>
+          <p class="price">R$ 169,90</p>
+          <a href="loja colecionaveis/decorativo.html" class="btn-buy">Comprar</a>
+        </div>
+      </div>
+
+      <div class="col d-flex">
+        <div class="product-card">
+          <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWYRDXCe3BGbS%2FfYxPk2bp%2Blc84SE6499qWHS7eqS3Pzu2QERROqoRdd7WkAj2SbRpwIzRngs4EMcGjNI0lsKSXb%2FT3R4Sh%2FsnCTg0Zm0DgvoxrTJULc3Lbj%2BaAsQCI1CPpGURi%2BOFaIJp1SOiVZYca%2B4kEbiooLBnBLTr19gQMPhAKmyYLD%2BK8JZB2jziFxUwHes3tXQylIUNPTSJfTDSXx18l6ddGmFhZqLzAh7adFWCrf15F6y9OqcuObXwJG4EIHJpk6SiLrp7NXQGTCaGBcjnA54v0ilAPrVQ3E906Z49cvfVM3%2FzxAKl7sLiWPnZw7zn0vpfgH7SHEN0aKKBWLRUHZzd6JC%2B%2FATxXqT5OVSqyAbMSvJ902QQBVpwOctQeDJHOCItinSYJpjyY60lHixaV245n2HxPmAolEgUxZBvR472O%2B2yrh6xDdNwIgDuLCb5G7yIXLAxpfWndWLeF4qUZz%2BVmveZH8jvQID5NJplpQrqM3IdKeHmAVyJIKWE3Bw8ihnR8LZO8Uxt2gy%2BK36XM737nbdGZqewyaZTSw%2BmwQCGOlFdtKScQepBjv%2FuvJU%2BM%2BZM%2FX2KX76jE&allow_caching=true&sz=w512" alt="">
+          <h5>Placa Metálica Corrida Maluca</h5>
+          <p>Placa colecionável em alumínio com arte exclusiva vintage.</p>
+          <p class="price">R$ 59,90</p>
+          <a href="loja colecionaveis/placa.html" class="btn-buy">Comprar</a>
+        </div>
+      </div>
+
+      <div class="col d-flex">
+        <div class="product-card">
+          <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEXceZHgzNH8x4Jc7clfdlXe%2FcqqenJqT3MHKnMYt6UD4anZVv1gEDH%2FZB5CqhXsuAaK3MUEny4GkHkNafrC%2FKFYNAin9k8xJLIjKbV2cqUVFVS0hZtr3uz7LX9GyDwEBiAj7oOIC8M20D7f2u6bjpQLf7RcG9E9FiTskTuFrbayh9ZXs0jtkFFauy0TQn8P82rIOT52vCuz1TGdWJNU9Thsu4Gtjm37AF5%2BuuvjDvu0g2y%2FwNjvSrH%2FbU%2FfFOpk5sCC5bjPs9WPR8ixTw7wdPf6r5hsxZHAMHMt1M98BA%2B3derCIQWJ%2Fmlk%2FFjozKa64ef%2FocBcjcSGH80YePY0ubUTiR9VaMKRDgjD9Ph%2F%2BUC2xNZ8HwyCT%2B6T1t7%2BnHiVe1KayEWSlXQPOzGZfRtWlEfQJ2a1FPsGRPglDcOYN6Rc5UJ5D18S8AdBSiuLVfZrxZPXiNG%2B2m%2B9VAu0PtzjZ0u6r3fQafT%2FlJPaGc1CWeMdE4EzBBhVXtDD35Y61PhqC4o3dcoqMr%2FfLGTPHVbmrLScytZJlYBRfCxXmRW9Am9KHRftirtdCP1Dq3%2FazRW3HgY7mF6mByYdVszewJs%3D&allow_caching=true&sz=w512" alt="">
+          <h5>Quebra-Cabeça Penélope</h5>
+          <p>500 peças com arte colorida da Corrida Maluca, ideal para colecionadores.</p>
+          <p class="price">R$ 79,90</p>
+          <a href="loja colecionaveis/quebra.html" class="btn-buy">Comprar</a>
+        </div>
+      </div>
+
+      <div class="col d-flex">
+        <div class="product-card">
+          <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUT8IKlEgabUxeJjPrOEWuukedvx1XbXlvJZGjGtyPHPqoA7NaQLme4XZt53Us8vFu6blb7EWVJvQRGp8%2FkJlLaAza%2FjpeB6LDn%2B0aaQwBGU%2FyLkjFyJEV9%2BbsZqpoMDdFg40WbuwnKRc8RIak1NPAnE%2B9fUNjrgrRDCcvKYKuI2MbYDpMZcdh3aOjucKUS4nXFo8kax9byp4AUNRAwMcweuxeR01beHwHvt9o5Tj3wOEl%2BSsFKcpom9FvKEKqN1snRzGpivQhbKarasQbgjCnh2vd06ZHZP72cxwYsSAwAkiNeCwIloRM5sw%2Bqe%2BVkuXkLnDb8PZGLxXtWJC%2FV0E2CjnrQcLa%2FBBmNXFnaz%2BqgZLd0Y7kX4V9k%2F9bhn0MV3BGBaypNAOIXZP6M%2Fbu2gg8xiBqnp8G8%2Fb%2FoFJtBd%2FKGRj%2FOoj9mlXJXo03JGQ7GJ1bkKFVKbn4rIvOo9C5Fo3lZ7%2FTb6IiQ6Yo1Sc6L56weChtckAspKRY0aEO1zIUTlwMAgFFWIl%2FWReFqd8kfkWxM4j6WX7%2F6QyLeghZqpissO5uvDyuG%2FU3BRpNjIck8SWRIDuqB12h7qmQN7Dw%3D&allow_caching=true&sz=w512" alt="">
+          <h5>Kit de Bottons Clássicos</h5>
+          <p>Conjunto com 6 bottons colecionáveis com os pilotos e carros originais.</p>
+          <p class="price">R$ 39,90</p>
+          <a href="loja colecionaveis/kit.html" class="btn-buy">Comprar</a>
+        </div>
+      </div>
+
+      <div class="col d-flex">
+        <div class="product-card">
+          <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUNnEpt%2F%2F9ZaLY0z00R4HCk2Zb0lF%2F95tYUbCG3VzwWjMbaEQWRlxXEHVAutoOHe2hqOy0KyoYP%2BP8IXv6p5e0Spa66dYTuTg1OVM43ZIUVCgEGU0hPMu3uPcUK0wqLnoFwsSrDTAbnqu4uwd%2F76v9nvIj%2B%2F6X8AdXI9ruVhnBzCQslgoaTxFCXfik9eOAPkSkxuWksIkO8h5h4P%2BX0l5FRYx6fj7wdORF2bahEA70pOorHynWIhK4wGxffIJyo91fllALZB8RXSolamsFOKqA4ybg%2FLoOYGw3ScBYbf5OUKUf8sd2ni9nZb%2F9%2BTHyOhyZi5Wi9GPjUgkNt8pOxxrJJKQaBL%2FkKmD9KNJ9xJ5OSg3i2ovzrHdQpWDSaKLf0uBpgtYoK3I9hhwdE3SJ0q0agBhKj4HCQDiT25dl7gPZ8vVfNtF1S3gwMjsDZVUUKqXhoTdujwVYgNLLY%2BK27PLj%2Fjg9qOKCHdwvvA0MnCUd%2BcosvYCoPoAvAbDcJm8n%2B7VoJyBSEXpxoP9JCWb2ED68Ip6WSvBRiKXMwLS2T%2B6M7aWiZZATPEcbHYH3kRi135q694zAm4tUWfLSJG2uO&allow_caching=true&sz=w512" alt="">
+          <h5>Caneca Mutley Risadinha</h5>
+          <p>Caneca preta com estampa colorida e acabamento brilhante.</p>
+          <p class="price">R$ 64,90</p>
+          <a href="loja colecionaveis/caneca.html" class="btn-buy">Comprar</a>
+        </div>
+      </div>
+
+      <div class="col d-flex">
+        <div class="product-card">
+          <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEVdt%2BVfoqgqu7n5yGiM7ttnCZ%2FaS7N7hLeWa67gLZS3WW9KiNn%2FBW9UTWxNQcKEuov3JiuafAidJIJrEuJRw5D6ThX%2BPRhKD5mm53YvSCPBwlJ59A3dDCt%2B3GJ%2BGwrQicxvP31lUOksrMX8SHhkhfXrh6%2BpAY1DzTGfr%2FSwwSbd7SUWwiXjsqGMqrvCXWmQrN0RYcprDuRD7bw%2BOnc%2BABkBv77KnfeAxc9uWAV8tG84M9z34Sm0WYwNMBgEjaIP%2FzYqW4ClVCIEuyiZJ9iPemygrjy8Oolsr06VTlWizA6Jc%2FbbZ204iHNmkx0BRF9BSUfS4iIlWsWBDwCokGA3Qg2yJpAh1fbNNqU0bINS2oAQIb%2Fklxz%2Fqc0lBfWRBsBnZ2%2B4oGAoTn8nXPnyo7%2FCla%2B5JT3mECWsGrG%2FdY8jxdCHnVpX09lxmr9Ar3qZdtBuUcD7dbdUxHYgxr9Z9UvNFKm%2BZY1VnY31%2BhH4TBJsR5K4tL%2BX2vxsRv9dKaSkxnZBYY7YyUdT6rnVR9noZjUBVTBRpYAiUseMS%2F3lT3Durrox6MNkWiqJ4QrKoOrYfMft69mW6aG8RxS30ICJ%2FCfV&allow_caching=true&sz=w512" alt="">
+          <h5>Livro de Arte Corrida Maluca</h5>
+          <p>Edição especial com bastidores, ilustrações originais e curiosidades da série.</p>
+          <p class="price">R$ 99,90</p>
+          <a href="loja colecionaveis/livro.html" class="btn-buy">Comprar</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 Corrida Maluca Oficial - Linha de Colecionáveis - Todos os direitos reservados
+</footer>
+
+<button id="btnTopo" title="Voltar ao topo">🚀</button>
+
+<script>
+const btnTopo = document.getElementById("btnTopo");
+window.addEventListener("scroll", () => {
+  btnTopo.style.display = window.scrollY > 300 ? "block" : "none";
+});
+btnTopo.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
+
+</body>
+</html>

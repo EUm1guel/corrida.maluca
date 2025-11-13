@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Pagamento - Mario Games</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body { font-family: "Segoe UI", system-ui, -apple-system, sans-serif; background:#f4f6f8; padding:30px; }
+  .card-pay { max-width: 720px; margin: 0 auto; background:#fff; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,0.08); padding:24px; }
+  .brand { color:#E4000F; font-weight:700; letter-spacing:0.6px; }
+  .input-group .form-control:focus { box-shadow:none; border-color:#1C5ABD; }
+  .card-visual { background:linear-gradient(135deg,#1C5ABD,#E4000F); color:white; border-radius:8px; padding:14px; min-height:82px; }
+  .small-muted { color:#6b7280; font-size:.92rem; }
+  .is-invalid + .invalid-feedback { display:block; }
+  .note { font-size:.85rem; color:#6b7280; }
+</style>
+</head>
+<body>
+
+<div class="card-pay">
+  <div class="d-flex align-items-center mb-3">
+    <div class="me-auto">
+      <div class="brand fs-4">Mario Games — Pagamento</div>
+      <div class="small-muted">Pagamento seguro (simulado)</div>
+    </div>
+    <div class="text-end small-muted">Conexão segura 🔒</div>
+  </div>
+
+  <!-- visual do cartão -->
+  <div class="card-visual mb-4">
+    <div id="vis-number" style="font-weight:700;font-size:18px">•••• •••• •••• ••••</div>
+    <div class="d-flex justify-content-between mt-2">
+      <div id="vis-name" style="text-transform:uppercase">NOME DO TITULAR</div>
+      <div id="vis-exp">MM/AA</div>
+    </div>
+  </div>
+
+  <!-- formulário -->
+  <form id="paymentForm" novalidate>
+    <div class="row g-3">
+      <div class="col-12">
+        <label class="form-label">Número do Cartão</label>
+        <input id="cardNumber" inputmode="numeric" maxlength="19" autocomplete="off"
+               class="form-control" placeholder="0000 0000 0000 0000" required>
+        <div class="invalid-feedback">Número de cartão inválido.</div>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Nome no cartão</label>
+        <input id="cardName" autocomplete="off" class="form-control" placeholder="Nome impresso no cartão" required>
+        <div class="invalid-feedback">Informe o nome do titular.</div>
+      </div>
+
+      <div class="col-md-3">
+        <label class="form-label">Validade (MM/AA)</label>
+        <input id="cardExp" inputmode="numeric" maxlength="5" class="form-control" placeholder="MM/AA" required>
+        <div class="invalid-feedback">Validade inválida ou expirada.</div>
+      </div>
+
+      <div class="col-md-3">
+        <label class="form-label">CVV</label>
+        <input id="cardCvv" inputmode="numeric" maxlength="4" class="form-control" placeholder="123" required>
+        <div class="invalid-feedback">CVV inválido.</div>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">CPF</label>
+        <input id="cpf" inputmode="numeric" maxlength="14" class="form-control" placeholder="000.000.000-00" required>
+        <div class="invalid-feedback">CPF inválido.</div>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">E-mail</label>
+        <input id="email" type="email" autocomplete="off" class="form-control" placeholder="seu@exemplo.com" required>
+        <div class="invalid-feedback">Email inválido.</div>
+      </div>
+
+      <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="note">Os dados nunca são enviados — este é um demo front-end. Em produção use um gateway PCI.</div>
+          <button type="submit" class="btn btn-primary" style="background:#E4000F;border:none">Pagar R$ --,--</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Modal de sucesso -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center p-4">
+        <h5>Pagamento realizado com sucesso </h5>
+        <p class="small-muted">Dados validados no cliente. Em produção, integre com um gateway.</p>
+        <button class="btn btn-success" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// ---------- funções utilitárias ----------
+const onlyDigits = str => str.replace(/\D/g,'');
+const cardNumber = document.getElementById('cardNumber');
+const cardName = document.getElementById('cardName');
+const cardExp = document.getElementById('cardExp');
+const cardCvv = document.getElementById('cardCvv');
+const cpfInput = document.getElementById('cpf');
+const emailInput = document.getElementById('email');
+
+const visNumber = document.getElementById('vis-number');
+const visName = document.getElementById('vis-name');
+const visExp = document.getElementById('vis-exp');
+
+// Máscaras
+cardNumber.addEventListener('input', e => {
+  let v = onlyDigits(e.target.value).slice(0,16);
+  v = v.replace(/(.{4})/g,'$1 ').trim();
+  e.target.value = v;
+  visNumber.textContent = v || '•••• •••• •••• ••••';
+});
+
+cardName.addEventListener('input', e => {
+  visName.textContent = e.target.value.toUpperCase() || 'NOME DO TITULAR DO CARTÃO';
+});
+
+cardExp.addEventListener('input', e => {
+  let v = onlyDigits(e.target.value).slice(0,4);
+  if(v.length > 2) v = v.slice(0,2)+'/'+v.slice(2);
+  e.target.value = v;
+  visExp.textContent = v || 'MM/AA';
+});
+
+cardCvv.addEventListener('input', e => e.target.value = onlyDigits(e.target.value).slice(0,4));
+
+cpfInput.addEventListener('input', e => {
+  let v = onlyDigits(e.target.value).slice(0,11);
+  v = v.replace(/(\d{3})(\d)/,'$1.$2');
+  v = v.replace(/(\d{3})(\d)/,'$1.$2');
+  v = v.replace(/(\d{3})(\d{1,2})$/,'$1-$2');
+  e.target.value = v;
+});
+
+// ---------- Validações ----------
+function luhnCheck(cardNum){
+  const digits = onlyDigits(cardNum).split('').reverse().map(d => parseInt(d));
+  let sum = 0;
+  for(let i=0;i<digits.length;i++){
+    let d = digits[i];
+    if(i%2===1){ d*=2; if(d>9)d-=9; }
+    sum+=d;
+  }
+  return sum%10===0;
+}
+
+function validateExp(v){
+  if(!v || !/^\d{2}\/\d{2}$/.test(v)) return false;
+  const [mm,yy] = v.split('/').map(s=>parseInt(s));
+  if(mm<1 || mm>12) return false;
+  const now = new Date();
+  const currentYY = now.getFullYear()%100;
+  const currentMM = now.getMonth()+1;
+  if(yy<currentYY) return false;
+  if(yy===currentYY && mm<currentMM) return false;
+  return true;
+}
+
+function validateCPF(strCPF){
+  const s = onlyDigits(strCPF);
+  if(!/^\d{11}$/.test(s)) return false;
+  if(/^(\d)\1{10}$/.test(s)) return false;
+  let sum=0; for(let i=0;i<9;i++) sum+=parseInt(s.charAt(i))*(10-i);
+  let rev=11-(sum%11); if(rev>=10) rev=0; if(rev!==parseInt(s.charAt(9))) return false;
+  sum=0; for(let i=0;i<10;i++) sum+=parseInt(s.charAt(i))*(11-i);
+  rev=11-(sum%11); if(rev>=10) rev=0; if(rev!==parseInt(s.charAt(10))) return false;
+  return true;
+}
+
+function validateEmail(e){ return /\S+@\S+\.\S+/.test(e); }
+
+// ---------- Submissão ----------
+document.getElementById('paymentForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  [cardNumber,cardName,cardExp,cardCvv,cpfInput,emailInput].forEach(el=>el.classList.remove('is-invalid'));
+  let valid=true;
+
+  if(!luhnCheck(cardNumber.value)){ cardNumber.classList.add('is-invalid'); valid=false; }
+  if(!cardName.value.trim()){ cardName.classList.add('is-invalid'); valid=false; }
+  if(!validateExp(cardExp.value)){ cardExp.classList.add('is-invalid'); valid=false; }
+  if(cardCvv.value.length<3 || cardCvv.value.length>4){ cardCvv.classList.add('is-invalid'); valid=false; }
+  if(!validateCPF(cpfInput.value)){ cpfInput.classList.add('is-invalid'); valid=false; }
+  if(!validateEmail(emailInput.value)){ emailInput.classList.add('is-invalid'); valid=false; }
+
+  if(!valid) return;
+
+  new bootstrap.Modal(document.getElementById('successModal')).show();
+
+  setTimeout(()=>{
+    e.target.reset();
+    visNumber.textContent='•••• •••• •••• ••••';
+    visName.textContent='NOME DO TITULAR';
+    visExp.textContent='MM/AA';
+  },300);
+});
+</script>
+</body>
+</html>

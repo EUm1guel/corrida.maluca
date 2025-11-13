@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrida Maluca - Loja Masculina</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Bangers&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #FFECB3;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Bangers', cursive;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background: #D32F2F;
+            color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 4px 15px rgba(172, 45, 45, 0.4);
+            border-bottom: 5px solid #FFC107;
+        }
+
+        header h1 {
+            font-family: 'Luckiest Guy', cursive;
+            font-size: 2.5rem;
+            text-shadow: 4px 4px #0000005a;
+            margin: 0;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+            font-weight: 700;
+            margin: 0 10px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #FFC107 !important;
+        }
+
+        .hero-section {
+            background: #FF9800;
+            color: #333;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-section h2 {
+            color: #ffffff;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            max-width: 900px;
+            margin: 20px auto;
+            background: rgba(255,255,255,0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .produtos {
+            background: #FFFDE7;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .produtos h2 {
+            color: #D32F2F;
+            font-size: 3rem;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+            border: 3px solid #D32F2F;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+            border-color: #FFC107;
+        }
+
+        .product-card img {
+            width: 300px;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            border: 4px solid #D32F2F;
+            background: #FFF;
+        }
+
+        .product-card h5 {
+            color: #D32F2F;
+            font-family: 'Bangers', cursive;
+            font-size: 1.5rem;
+        }
+
+        .product-card p {
+            font-size: 1rem;
+            color: #555;
+            text-align: left;
+        }
+
+        .product-card .price {
+            font-weight: bold;
+            color: #1565C0;
+            font-size: 1.2rem;
+        }
+
+        .btn-buy {
+            background: #FFC107;
+            color: #333;
+            font-weight: bold;
+            border-radius: 8px;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        .btn-buy:hover {
+            background: #009F6B;
+            color: #fff;
+        }
+
+        footer {
+            background: #D32F2F;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-weight: 600;
+        }
+
+        #btnTopo {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #FFC107;
+            color: #333;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 1.4rem;
+            display: none;
+        }
+
+        #btnTopo:hover {
+            background: #D32F2F;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <h1>Corrida Maluca</h1>
+            <div class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="colecionáveis.index.html">Colecionáveis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="feminina.index.html">Moda Feminina</a></li>
+                    <li class="nav-item"><a class="nav-link" href="4index.html">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="hero-section">
+    <h2>Loja Masculina Corrida Maluca</h2>
+    <p>Reviva a nostalgia e a diversão da Corrida Maluca com itens de coleção exclusivos! De miniaturas detalhadas a pôsteres clássicos, cada peça é feita para fãs que aceleram de coração com Dick Vigarista, Penélope Charmosa e toda a turma.</p>
+</section>
+
+<section class="produtos">
+    <div class="container">
+        <h2></h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+            <!-- 1 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="imagens/loja masculina/caneca dick vigarista.png" width="300" alt="">
+                    <h5>Caneca Dick Vigarista</h5>
+                    <p>Ideal para colecionar e usar no dia a dia.</p>
+                    <p class="price">R$ 45,00</p>
+                    <a href="loja inicio/caneca.html" class="btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="Imagens/Loja inicio- imagem/Camiseta dick vigarista.png" width="300" alt="">
+                    <h5>Camiseta Dick Vigarista</h5>
+                    <p>Vista o estilo do vilão mais trapaceiro!</p>
+                    <p class="price">R$ 79,90</p>
+                    <a href="loja inicio/dick.html" class="btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="Imagens/Loja inicio- imagem/Boné.png" width="300" alt="">
+                    <h5>Boné Corrida Maluca</h5>
+                    <p>Design esportivo com logo exclusivo.</p>
+                    <p class="price">R$ 65,00</p>
+                    <a href="loja inicio/bone.html" class="btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="imagens/loja masculina/poster corrida maluca.jpg" width="300" alt="">
+                    <h5>Poster Corrida Maluca</h5>
+                    <p>Decore seu quarto com este poster retrô.</p>
+                    <p class="price">R$ 35,00</p>
+                    <a href="loja inicio/poster.html" class="btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="imagens/loja masculina/corridas da trapacas.png" width="300" alt="">
+                    <h5>Corrida das Trapaças</h5>
+                    <p>Junte-se a Dick Vigarista e Muttley!</p>
+                    <p class="price">R$ 150,00</p>
+                    <a href="loja inicio/corridas.html" class="btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="imagens/loja masculina/IMG_20230907_100257.jpg" width="300" alt="">
+                    <h5>Miniatura Trucker Corrida Maluca</h5>
+                    <p> Miniatura trucker estilizado. </p>
+                    <p class="price">R$ 55,00</p>
+                    <a href="loja inicio/trucker.html" class="btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="imagens/loja masculina/livro.jpg" width="300" alt="">
+                    <h5>Livro Corrida Maluca</h5>
+                    <p>História e curiosidades do desenho clássico.</p>
+                    <p class="price">R$ 60,00</p>
+                    <a href="loja inicio/livro.html" class="btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="imagens/loja masculina/adesivo.webp" width="300" alt="">
+                    <h5>Adesivos Corrida Maluca</h5>
+                    <p>Decore cadernos, notebooks e muito mais!</p>
+                    <p class="price">R$ 15,00</p>
+                    <a href="loja inicio/adesivo.html" class="btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- 9 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="imagens/loja masculina/chaveiro.webp" width="300" alt="">
+                    <h5>Chaveiro Corrida Maluca</h5>
+                    <p>Leve os personagens sempre com você.</p>
+                    <p class="price">R$ 25,00</p>
+                    <a href="loja inicio/chaveiro.html" class="btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- 10 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="imagens/loja masculina/camiseta femia.jpg" width="300" alt="">
+                    <h5>Camiseta Penélope Charmosa</h5>
+                    <p>Para fãs da elegante Penélope.</p>
+                    <p class="price">R$ 80,00</p>
+                    <a href="loja inicio/charmosa.html" class="btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- 11 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="imagens/loja masculina/jogo corrida.jpg" width="300" alt="">
+                    <h5>Jogo Corrida Maluca</h5>
+                    <p>Para se divertir em grupo</p>
+                    <p class="price">R$ 12,00</p>
+                    <a href="loja inicio/jogo.html" class="btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- 12 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="imagens/loja masculina/mochila.png" width="300" alt="">
+                    <h5>Mochila Corrida Maluca</h5>
+                    <p>Perfeita para escola ou passeio.</p>
+                    <p class="price">R$ 95,00</p>
+                    <a href="loja inicio/mochila.html" class="btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- 13 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="imagens/loja masculina/relogio.png" width="300" alt="">
+                    <h5>Relógio Corrida Maluca</h5>
+                    <p>Tenha sempre a hora com os personagens!</p>
+                    <p class="price">R$ 110,00</p>
+                    <a href="loja inicio/relogio.html" class="btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- 14 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="imagens/loja masculina/porta copos.png" width="300" alt="">
+                    <h5>Porta-Copos Corrida Maluca</h5>
+                    <p>Mantenha sua mesa organizada com estilo retrô.</p>
+                    <p class="price">R$ 28,00</p>
+                    <a href="loja inicio/copos.html" class="btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- 15 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="imagens/loja masculina/almofada.png" width="300" alt="">
+                    <h5>Almofada Corrida Maluca</h5>
+                    <p>Decore seu sofá com conforto e nostalgia.</p>
+                    <p class="price">R$ 65,00</p>
+                    <a href="loja inicio/almoda.html" class="btn-buy">Comprar</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2025 Corrida Maluca Oficial - Linha Masculina - Todos os direitos reservados
+</footer>
+
+<button id="btnTopo" title="Voltar ao topo">🚀</button>
+
+<script>
+const btnTopo = document.getElementById("btnTopo");
+window.addEventListener("scroll", () => {
+    btnTopo.style.display = window.scrollY > 300 ? "block" : "none";
+});
+btnTopo.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
+</body>
+</html>

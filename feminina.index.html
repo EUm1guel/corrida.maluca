@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrida Maluca - Loja Masculina</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Bangers&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #FFECB3; /* mesmo amarelo retrô */
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Bangers', cursive;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background: #D32F2F;
+            color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 4px 15px rgba(172, 45, 45, 0.4);
+            border-bottom: 5px solid #FFC107;
+        }
+
+        header h1 {
+            font-family: 'Luckiest Guy', cursive;
+            font-size: 2.5rem;
+            text-shadow: 4px 4px #0000005a;
+            margin: 0;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+            font-weight: 700;
+            margin: 0 10px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #FFC107 !important;
+        }
+
+        .hero-section {
+            background: #FF9800;
+            color: #333;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-section h2 {
+            color: #ffffff;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            max-width: 900px;
+            margin: 20px auto;
+            background: rgba(255,255,255,0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .produtos {
+            background: #FFFDE7;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .produtos h2 {
+            color: #D32F2F;
+            font-size: 3rem;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+            border: 3px solid #D32F2F;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+            border-color: #FFC107;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            border: 4px solid #D32F2F;
+            background: #FFF;
+        }
+
+        .product-card h5 {
+            color: #D32F2F;
+            font-family: 'Bangers', cursive;
+            font-size: 1.5rem;
+        }
+
+        .product-card p {
+            font-size: 1rem;
+            color: #555;
+            text-align: left;
+        }
+
+        .product-card .price {
+            font-weight: bold;
+            color: #1565C0;
+            font-size: 1.2rem;
+        }
+
+        .btn-buy {
+            background: #FFC107;
+            color: #333;
+            font-weight: bold;
+            border-radius: 8px;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        .btn-buy:hover {
+            background: #009F6B;
+            color: #fff;
+        }
+
+        footer {
+            background: #D32F2F;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-weight: 600;
+        }
+
+        #btnTopo {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #FFC107;
+            color: #333;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 1.4rem;
+            display: none;
+        }
+
+        #btnTopo:hover {
+            background: #D32F2F;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+
+  
+<header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid container">
+            <a class="navbar-brand" href="#">
+                <h1 style="color: rgb(255, 255, 255);">Corrida Maluca</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="background-color: white;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="5index.html">Início da Loja</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="masculina.index.html">Moda Masculina</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="colecionáveis.index.html">Colecionáveis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="4index.html">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Seção Hero -->
+<section class="hero-section">
+    <div class="container">
+        <h2 style="color: #FFF;">Loja Feminina Oficial - Corrida Maluca</h2>
+        <p>
+            Bem-vindas à coleção feminina da <b>Corrida Maluca</b>! Linha inspirada na Penélope Charmosa: camisetas, vestidos, jaquetas, shorts e acessórios especialmente pensados para quem ama estilo retrô com atitude.
+            Peças com design exclusivo, cores vibrantes e modelagens confortáveis, perfeitas para a fã que acelera com elegância.
+        </p>
+    </div>
+</section>
+
+<!-- Produtos -->
+<section id="products" class="produtos">
+    <div class="container">
+        <h2></h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            
+            <!-- Produto 1 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWK70YeJPRQgJkplCXdqI9rk9OMPT3j39JRjHbJA%2FDSu9Ca9kcdZtNLg7PSoMl10H9P3F2fRFWVCwdjM7F6n%2BOFhbVpTA%2FLFkXdisx%2B1gxeopAsU2tgaK4eCmff3JgOy46p4BqZiqIMmcuy%2Bp0FOfQ8kpC5RROwWuG0qmvvfUNt%2B56FseoBs8eUyG%2BM%2BocDK8qa2Ke%2Bx5olOErYTKT9EImtsyK%2Bv0kO1zmggw%2FmytS2tBzQ7GRXwaKJ71Dv9AT9iWbRKL6ApyQ9WRShoboR%2FwExKDZChQtt3L2P%2FHViZ2e26%2F2oO%2FYbPly3QFQlXtpemBxkTf646Ocoj%2BWhUtyeqw0vW4UXgJCaaBxZpld%2BnYAVy8HNtEpnWMvqJnP8wzZtOs2PxT17VRCDLHmYFvT4Lzn0vGc1XIlqAUrJe%2B1TwCNsaEoSAy4NYPLkPTtFq3bFLsuLixO4RQwc0XMYATx9NVZHZTnpoq9t22qvIsQr98NxRdj0dtepe41l4BQFTVZtn0JNzQcItAOqlNARUgfcJQZga4yWkfP2QlE2XdDIT0QrsanJcCraovMg15lY%2FUe%2B4TSeV%2F%2FGhH0jJeGntg%3D%3D&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Camiseta+Penelope'" 
+                         alt="Camiseta Penélope Charmosa">
+                    <h5>Camiseta Penélope Charmosa</h5>
+                    <p>Camiseta feminina em malha premium com estampa exclusiva da Penélope.</p>
+                    <p class="price">R$ 89,90</p>
+                    <a href="Loja feminina/camiseta.penelop.index.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEU9kWUGVZ4LV%2Fgb4hCqwzXwfE4CpDp2WitIPhor1FExY6unRTz2o12tgPX1Hn75Bct%2BrXGJ6N1YJk2uvsrnxgHBPiwg7w5N0GJsSmePrimFqCefnaAQATJv1d3Sy1uoTTJ7yN4CBdGou8N7BC7npzZRkLQ0JMT1QU763F%2BWiSu9pEyYwIHItks4XWGmw9h0%2FO0lBEqU4taaii0jv2jvXbVnRmzVp2vpOMLvLJ4Xdr5qeAaOyzeZWEfj74XrkRaZOu0VjeInT2SVt%2Fy3iCjBZprsM2bWYhILp4xq0OaCoedzw8fx5kdcbSO5SeqNMdfdjov%2Fnd%2BIdjqfrr7z0atXfifnyVsnZ%2FvOHbUzWMn9fIdGLWV%2B6Mfx081%2FrFtxrsNi1e66unGPZ9X11wpiHiND3OJv4YssMsH3pjXzExtOLQK8TCrjuDZM5uC63QqkFMd1I7c7ojLGtyIXs4gp0clL0HRGYcow6I1gWVm4qJdN9vZe6D9it7%2Fb%2FCgZk7GShD0Qp3KNttGOUnhZZJGd1kP1JCXiOaKttzuAEpeSuHRcecqW8GQ1lxUc%2Fo2Aq3iBgZrATxulOD6hE%2FodqhbzofR2&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Vestido+Rosa+Retr%C3%B4'" 
+                         alt="Vestido Rosa Retrô">
+                    <h5>Vestido Rosa Retrô</h5>
+                    <p>Vestido leve com estampa floral inspirada nas cores da Penélope.</p>
+                    <p class="price">R$ 149,90</p>
+                    <a href="Loja feminina/vestido.rosa.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWoMvjIZwfETRjHyfTpzyy9ZUgjkKNEkmSNZkK6jVZMoC9%2FrD45zvF7AMoByIgj5NS4oJvGMoECqloOwm9o%2F7Ldyhi2OUxdE36PCLOHDJsgeaO%2BKKP%2BcaZ2cChc3VJmOq7JYvQ7gC3DKPBbcmi4Ra3UX3q3z5nFJfsm5WEqz3izuakDdPbNW8AFJIysgHxKQaZCsndcNv4G7W%2Ffy08eIdJKLtT8%2FWtz1o%2FFeyE8yOs2rnfYJLyiq%2FfQRiRmNKDdzOGuDqCLwX4B8PXab%2F%2Bkaz4pJlh8EGDOFd8Gk%2F8HU1%2Fz975mONGUU67HwIxdm2s4lSmOjETI7oLeWPV0A0cBxLNchGMODA1ek6qXgVaj0YgjmN6gqP1R6gRNF6aZ5ta608SbkCfrGjU5WfEG6JJjic1ABaXzGOXvqWZZoCuvOBgjbLSHkXCOfXX9K35WftPENEWUiqRUr%2FT8G0Un4WYGDW05JD677FKyJWPmR3QGr4%2FUehOCdIJ9JG%2BS2sByZnGZ0KhZTXRzy%2BBPFaMR5N4MoczRhG0MvE2KUK6W9MvJImrwvVwtydLWq87M5O%2BxoUnweSBCgEScI%2Bwi7gHOF0ElLfQ%3D&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Jaqueta+Penelope'" 
+                         alt="Jaqueta Penélope">
+                    <h5>Jaqueta Rosa Penélope</h5>
+                    <p>Jaqueta estilo bomber com patchs retrô da Corrida Maluca.</p>
+                    <p class="price">R$ 199,90</p>
+                    <a href="Loja feminina/jaquetarosa.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- Produto 4 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUdnjgjl0r0XSq%2FCslWWVgpvcfzwXXe95iCNSoOm17Smj%2BZHcIA4yyL98oVc4oBVcCGYvqRvz%2B%2FAw1VTC1trRU1D4oYAoTst1iqbEm49vVlhw8gMuMmH%2Bv6nghyJ1YEt51Ax8okDPzQf%2BkbLekjgeoVtIqWQ803Hm3O2L5qbnYYIYhrtnsW13%2BFQGQQtVBFlmjZ3FuMQPehx7GOwZxcF4D%2B0L4ZT10aJF63shQ7T0M7oBelQ%2Fvd%2BZrMLwacQ759XN3jpGa1%2FStr0e2u%2Bb5oCrdVKuaw%2Fhngm8tUUBptzkETSOZvP2G4cq9OeuvWhj97wPhWEJDT5QM9ku6AAGW2huW6VDc49k5DimgZyqjbVy82NLDB1cdM83kdlBsm%2BRyGMBhsnEB6tbeyYvsm0j8FSWNOvkLV2FDIMDajWPoiePjNXt2sOckzCJ%2FI%2BgeBq2mRzujOXbNr9gAe%2FSUXghPlX9xMkqBBxX4PDCY6DyiT8xVVxb77tS6PBkfQ20YxEcaNFgBoBKz0dRaVqRaeaikJvlf5gfKozvvGG8YshDRuS0Sf5zRg4njfHGsr51UieliFB%2BOHoAYWKf5U1l%2BIPZM%3D&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Bolsa+Penelope'" 
+                         alt="Bolsa Penélope">
+                    <h5>Bolsa Penélope Charmosa</h5>
+                    <p>Bolsa crossbody rosa com detalhe em metal dourado e logo exclusivo.</p>
+                    <p class="price">R$ 119,90</p>
+                    <a href="Loja feminina/bolsapenelope.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- Produto 5 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWlwqjJ2vGwujJlm87gHeQww%2BGVIJ7WZlSl3oxfvaKsqi%2BQfqd8QL%2B9VX6QnOQZNZCS5bB2pIdC8qCSMziPmx7yflsH1n9%2BTY5Dmnq1QWfxy1b4bf2b2KXnz8tfXbriD3nzI2yXN8figrAvzIk7IVz2O1GnE8e4cz%2Fgru6fFEkDahliz6iTbP4uzTbNeRojHL9R1z5SErwKw9sogRr6T6qHLRIwJoDwgJ7EdHGn9%2Ff5ePjEwfwirg86rAg22QC2zJ2LR5U6sri%2BZ1bwlS6GG3FlgJr4eQ0nUeDz7NyY7%2Bi5Es17NaMjHW%2F5cK9rgf9uNmPUKl%2FMxrqi6gCnOXxbitCNqINnz9bkn%2F0BvUY2chhcngjwGGtdCKjNP1ZRGRxypMoq%2BUJpH%2BLxLaeqDgCfxRYgvdXEKru%2BQVtbZYDHQFaf8V5FETUe4HIweHA%2Bx%2Fxfe0QVxY%2Fbeg0po54h%2Fh6YZs94hCZcInmuSU2CWMINAUm6TwbYIv09wBiBpDchTVxj%2FZwjicJnFeq6P9Krj7fK5hBmby56EsRtQpIzCHrae6sgvtO2935IEZEmHKchk%2BhwriutEB1FZyZVLyrpdI4nOQ%3D%3D&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Saia+Plissada'" 
+                         alt="Saia Plissada">
+                    <h5>Saia Plissada Corrida</h5>
+                    <p>Saia plissada com faixa lateral inspirada nas cores da pista.</p>
+                    <p class="price">R$ 99,90</p>
+                    <a href="Loja feminina/saia.plissada.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- Produto 6 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEVy00o%2BIssojA1zWZADmWpwSwJVkllokSlvJk%2FajZ9vJOfuwwYBEO81nbvW25dDKPr2Q1WPAFT4kBB98yO8i%2FS5zFsSxDcWbDNwj7RAJ0sH00sX87oPr6B7INbIJuJ%2F4dM82tkpWlKcRGeO3PUjXjA6aupC9SA%2Fjy7WoQUOlaeDdMShmX%2B5nYTNj0WRI5njlVa8R%2BJPJjMjgubait8CZfuDqUHmnXwKVsmbZMgXNu4tl6JWqnhD9%2B09feFETmWQeno4Hh%2Bq%2BPBwX3oyQKMFEhLl6fA6FrucEysUQvb65q%2Feom4vyLKqmtb5PT6Z3ItScac2QheYQd%2BN%2FIdW7rpAM32jzG6hNCHE8jGSYbNW1J0hspbOX0rqTBi%2B%2FGCQ3A1nA5SlgNS08QWa1zGNUMxSorPT%2B00nG%2BIG5H%2FnboKw%2FGlhSzwneGsW8RhNFnGnTu6dco13E3E4PxYGBrcT6WwovU06zdat4j5g5Al0uRdfvjVIVsupJXhY0K8rCEAJmf8hO6ARBvOHGZYHO%2B1CSWx1S%2BnDsGzR3WlSW5aaqAYnhxP3jDT%2FXChL8PTfsAmT2BW3LvUwxrdkVKJJgf0ki7Kz16H0JGHIeeXA6i8YLxSJMiUF8h1b3x9VdIDXyZTA&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Cropped+Penelope'" 
+                         alt="Cropped Penélope">
+                    <h5>Cropped Penélope Charmosa</h5>
+                    <p>Cropped confortável com silk frontal e acabamento em viés.</p>
+                    <p class="price">R$ 79,90</p>
+                    <a href="Loja feminina/cropped.penelope.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- Produto 7 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEVHPGC0bhOBLgN7VkIKrq6zd7p9aI2Y2jFeyeYhTdUGt9%2FOJj1gBEruzdRS%2FnhD%2BhwTtFg24G9dQmOT%2B6IYlByoLXJcpB3khJGNIcjN5%2Bc%2FiBhJ3GzgNQgy2CAz4xBR3UOZovLnXkuZv33xHQMtr2QbycnLnkMfmzdaoAfVp7vmXA1%2FviC9TYxmgBmUM5NUj%2BPOr4XqUMJ38Zg2bNarK280OeLinmJGNcpB9Ks9FtIWz%2BdGIApq%2FZlvhzI3Vjv1ikPLrqrFO0qMqm9SD62VYM2ohhJp%2FhvM5IhsqRpp8RBfMer6qqP5Syb3D3ZXz9RNlylrLTXTPwFP9hFPAr4ckcUPeW%2B6Rlm27s6s%2BPbSIOTPz2dpVf0AMwvkhK8vg1qRHgkXqMnBz8seckyIQEAphYd1QdQb556f3hEm6L30rQwsE9MwlpUe5aiuUqVf6Jdl%2BJg1NVjDlPuocQhcPZSo93XqOQs4r8%2F1sG8H%2BHKQZAP1zCHcAueDRs%2FdDLwNTLTBIcsuncHRDtHB%2BVFS7ouNT36R%2BkBgyB%2FXx2LnlxmNCf%2BomnW%2BCOEMkA7%2FbnWifVV%2FLzW3YN8TlRoMDKyRKlo%3D&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Short+Estampado'" 
+                         alt="Short Estampado">
+                    <h5>Short Estampado Feminino</h5>
+                    <p>Short leve com estampa exclusiva — perfeito para passeios e eventos.</p>
+                    <p class="price">R$ 89,90</p>
+                    <a href="Loja feminina/short.estampado.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- Produto 8 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEXpZ0J7cL3OOtTlCY32%2FYelAVBWzmfIviec%2BEt5g2SZWvWnNY100LFLa%2BWvPIneTaRkpcpPphBpifjpXJdzORqzdEOFHlBjO48bTiGRZpfgrhkPQG5tKQfI%2FA5dPrJyr%2B%2BovyoKQEr5H8qMP9Exf5u9DoRTzqtm8nDb12V4D5fDdbic6xSKuueQL7cftzEptHRnVhMGkoqKbZy2rXzxOe%2FhikZ3mOPiS0BLrO53ma0G0hdEqMvPLr5MIuBlNPF7IunmFwLUfjojIf5uzVZFfmhOMkRxRIEbzAU%2F9r1Gmlk1dSfE6YfdrTx586eDH7jIINOgxc4PMZtpvkh5Qsvfu%2FpCBc98fIIhzu57wj48%2F08fpTfIbAK3gJEoyYjD7%2FQuVnVubvy3iit84bhOg2bm0RELnPHV7OtFrdJTFWtSSCUVtH%2FiasUC2sHOGiwVSRcd5LuZWYoiOqUJTTFPMJK%2BxwrhWAFjpCOBaRHKfj%2BscUISEZasjcSi6P%2FZrgikcQFQfnRIv6AVM2AzbkrPmO7vhWtvEQolPzCbaa3ZBBPAO0zQ9VDzR6CEnBVpSVYz8JQ1%2BxJJ8kH3dVHToEf7Jlaz%2BRJFIZIM9IBQFFR6X8YO1ikKPJl2a%2FkGbXsJYBEMa4Q%3D&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Tenis+Rosa'" 
+                         alt="Tênis Rosa">
+                    <h5>Tênis Rosa Corrida Maluca</h5>
+                    <p>Tênis casual com detalhes retrô e palmilha confortável.</p>
+                    <p class="price">R$ 229,90</p>
+                    <a href="Loja feminina/tenis.rosa.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- Produto 9 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEW60PzDfFXNDJ1EVLj%2B3vqkxVZglbTK5hy264CHzADZEPhecOtNQiN1DddzxsaF%2FzGFBnc3wcoGnRL8FBniRwiqEqdTLL4WQnNc%2B%2B4KZk0qhTqSybAJpkkL8SzYp7UjanV1ZFJOK4bzLNfbLiipRV4%2FYoYxMCyBX%2BNW1T6NaLgrRpgvSwgmxhkVFNMC%2FnfuAp0rQRgLuqDXecbKnHIWQsYLuafz3eVp2K%2F2CnKEq%2B97HLr5qTZGqnMhwCIaN7npJL%2FdCmIJEjb0dL5zYy5RF4uwyrAPzAk6Q6mYFadDEMIsehaSzMVYnQ4jnvpuhEIo5gfDmKGbA0lBjcshx5DwX4Zs2tIXseJLRE8Gr8ZnPaOoBIQkG7PjAm3gFyRJNdkvxvohclRlKVFGr8yiFVLfrNzvl6D07AktGgIs%2FEI7e7Tr7FMxsDN5Y0jFVLzmwIXzlJDkZ0y4Uojbi6NZVW3hhD8e4UUJLWaRNS6TTrbyVN4S8n5bKTdOAY2lAXjF%2Fw18vOOfMRPJyqKRK7fevhI0hH6mResyroFyTszwKpXEnL8gIBYDlVa6pRRp8uFenHUc%2FWCftRkKyPA%2FmHLwDjEk&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Moletom+Penelope'" 
+                         alt="Moletom Penélope">
+                    <h5>Moletom Oversized</h5>
+                    <p>Moletom oversized com capuz e estampa frontal da Penélope.</p>
+                    <p class="price">R$ 169,90</p>
+                    <a href="Loja feminina/moletom.oversized.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- Produto 10 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUIz8rJZ9vh6mn87tfeoY%2FQ%2B4zbvaI6ZbHqxJ6t06lpk9f2a5GmxGmvGYUw6g5zxSqHzRf4muKVDnYIEGbmEPX%2FXanmHh8%2Flr0ZDqp5FWQtAc2kCNhgYBiX9Zq2fJBHXHFap5JjEQw9VLocf6AeOlXuZxsp5t01uciQFk6aaCeg%2FBYH%2BNYKaYHib4UhJ3Enpo20fo5yBJypove5Ww%2BmCgZtT439mb0fKqRsSP4iuJxc14cLADplO%2FSC8Qv4BWesVRDqjyRHRNLZ4pzoyMFusPhtdWm8jne13yguP2DjnpdzGjGdh2NOBELNcd2fXuwtDdzoVUqFtcIooEDpGsyrawWmkGphgR%2FlIy57DG8Sfhpyfg7osAtRqvhlu7yQKfM0rI3oNLhR1klFBhHjwmcZiv%2Bcquz3yECQDuMwSBzp1lSglwnn2NYWKll%2ByrP6rs4srO6Ulwb1esULM%2FFXa4i8cwRgeIH1eyNsFvyCrzBRKJOvkU1AXUXEKAQ2pd5DsCDc%2B%2FHVYGDtIvV1NPBvxI7sQJF1IUOMyigYTtiqL%2BBmdiDABqX14RDg34Ic1cudAQHcJlccbnrFxfoz8qIKBY9N&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Mochila+Penelope'" 
+                         alt="Mochila Penélope">
+                    <h5>Mochila Penélope Charmosa</h5>
+                    <p>Mochila média com compartimentos e estampa temática feminina.</p>
+                    <p class="price">R$ 159,90</p>
+                    <a href="Loja feminina/mochila.penelope.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- Produto 11 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWPwz%2BEUSo%2FfG%2BTFtgHV24svsstqrP0%2FFMHz1KnxMg0upb4SvQupdrBF37o63aJO%2BTYECB9zSjf%2BD63hx1324tTX4GJiVu6rpWpxvSrMZEQM%2F4uoi4D4Bzpcu%2FnQ7jwgecvB68Fv%2Bey5SoMQ4foNo9oneOs%2B76WgspDnC0jxuUOGRHhgRRJ%2BhYjH%2BrK5AVqsS7XuyVGzL7YIVVE77z9VC00zx7op0iHyhzGOmJCz%2FCX3dX%2Fu5mVPCoXpvdZw64jz111EUCkI%2FIiV3wCCFC1hSIIy%2FdXIHF5nRxH4vjjWDgsxJrxC59di%2Bht5v1WOidXZc7GAfesTy1QLUYDOxFHs7OhjrJKGJ3y2HEylXh6%2BgmIIe4iOO%2BrRcLfGcxR0tcqWBqG5eY7MACtB2Nr4EPmzzVuUY%2FQTwtJursDr4GDa4JPBZRLH9ULASmBiwoOgNavsWj1sSu2F8GllBGWw2ZRfpAKsK%2BKV%2F5ffSrDIlSsPFU%2BJNTD1mWEpCMJSmHTiZUf0Reo4E%2B5FDg4J5afm5%2FZkhPMY6fTt18tuyuNZfM%2Bne%2B1EgAzBmv9s%2Bov7iUIyqp8sw9%2BHKf0x8iF6q%2Fg4FA%3D&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Bolsa+Mini'" 
+                         alt="Bolsa Mini Penélope">
+                    <h5>Bolsa Mini Penélope</h5>
+                    <p>Bolsa compacta para ocasiões especiais com alça removível.</p>
+                    <p class="price">R$ 99,90</p>
+                    <a href="Loja feminina/bolsa.mini.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- Produto 12 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEU3DT2l5Mb8xqIQpeJO1qkhuAj4%2BVb%2FRufI4A0xQ0wXOhunY9hil1Rtu0sq9wAiloJt4UYFnQ78zgj6w4tK3loU08IXeEeDXHAX8XtmdCdjgc1ix5X49WnD5tt788OwgNTQUuepuNX6KRio9MlpcO%2Bxy7PfqD5dM9diBuH0U%2Bq9ZRlMpAzH9z3mSrXqZFRYg39lMYPERfh2hUr1y2LQ%2FQsxHQa8l00W8sQosrOWublAWkxrQF8FeaRFRygjYQP71FzSw%2Ftvoe0TnVIBKGBddPUzr3JVOGOyF3RpH6y6hBVDJq%2BRuARXBWYh%2Bt8%2BDexo4gPX7OJuIbs%2BEBQjKbSmn5fCpbWLuBCEwd2V1CcmWoX2QBdGSvmKWN8UDogmAkJJrdpLToXFQzbNgsHrPELoRRQQF6lHKQKilYuFPLEV6CCLneO80VXH2WfXWSYUNnhII%2Buw30OqMMRaFhVFjyckjcf7cNnixE3BspYL7rkbARRuso33XaTKthDEtyUVq%2B87l70ycvlcXa2t7vT64C92hrOIFrGxqg9AeKGuBaTZrtkAynBG6zjcl9ILb1IpW3XgnxJ9Ci67QA1TVhjaU%2B8H&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Pulseira+Charmosa'" 
+                         alt="Pulseira Penélope">
+                    <h5>Pulseira Charmosa</h5>
+                    <p>Pulseira com pingente da Corrida Maluca acabamento dourado.</p>
+                    <p class="price">R$ 49,90</p>
+                    <a href="Loja feminina/pulseira.charmosa.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- Produto 13 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUnA1Tqiamw4dmuo37e5lLQcZC%2BeS0jdCtwb3iZqfmOFsJ8UTmwFNOF2QPzb9XXNvnx79UJj0WabwMQ1GhhmOz%2Bp1uG%2FXqqq5QoV%2FhTzDa3fXzN56Sy1sXFCfbJ9ZYQ5qvhD5HMritUmcyAHrPjHaYn0lFEr2ifurkf6kBi3jF3%2FIvxxWs6iEUJSXEiCT55%2BNgVcUa6TQ%2BmMf2D84bgZyNsUtjeTZa4yDYRQoYpVFKh8syG%2FM7xa7ZYem17Hf9bNjM6ZY0tKYRcs817Rd93cE9Y6EDsZQ8G5CbHuowe1NzzymNATbZmGFK5tBYO7rK57rAZRWII9xghgRydR8SQLs5rML%2BMFYrhBcZzemXwAwLtV0yXk8yp3yNhu6NmUgu1WVjnFDno0g%2FkpMZq1qLsKc5B%2BY5qZYRl6chywZBJ%2BZLvp19KZYVh%2BuOKxH0nqJsvucm%2F9DSJ88uROE%2B8L0SaBSQZti06y7xZN8HhbcSStRlmS8WkZzaBiOEXUntp3MrsVa3%2FDJhlYIwCjtaBNhMuO%2Fu9sBl2gBCuK3zGCb8BpTB2czKNa8Q%2F3H2dvlmuwE98XLtbZbwL2dbXGDJHkg%3D%3D&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Vestido+Floral'" 
+                         alt="Vestido Floral">
+                    <h5>Vestido Floral Corrida</h5>
+                    <p>Vestido com estampa floral e corte evasê feminino e leve.</p>
+                    <p class="price">R$ 139,90</p>
+                    <a href="Loja feminina/vestido.floral.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- Produto 14 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEV%2Bee%2BHwljF3mfS1DagttZaIyt%2FNDrJ9WWvD5Uct3cjNIeFxsuYYgGpotUU%2BvS%2Bogj2M45UgtLweY6T5fvHeFFwQpVswwYOPhnVAWX3ANKlnS6MXSuOLhfaoiRcL%2BkjzPBLxe8U2GOzOyCVbCMU75FpIgp23B9j8cjNCLI6JDgX4re8W3e%2Bu%2B0%2BpxeVMxvEGqeTh%2BCleYhG%2FSR4NntLHjArfD62lOsvfh6KoXwh%2ByMls2dtrDsmhnH2%2BR0%2B3ztsq7A9gqXQcLTql%2BWhfxdkwo%2FKEoRAXwTrQdHsehTSGcWp2EU7dBuXqXK4UVnZyiI7KzTWmWk40TTGpY4rP4iZaVOLdgDSR57VfLfmFtlpHq6UjbR4xTiSIjuoSsmX%2ByZXlTH0gpjkd5Gnu3r5hWZBRoBOaxaaiJLaMCgzax%2BjvC%2BiWOdDryIQUj9rqoEVgfeZbfJ1Gc4iP%2FUbvyufaQK%2Bp9AhHtlYS2g1RTJ9m5oTdoR1P83DIgoigwqXLlqHEruJxYplVZVzmmYd7uBM4v2dWX2G4rzdD0pH23bXyzyaE%2FCJWoez9JxsELeyGTHE0AqP%2BZ9fQescjPq5HaSWRzk%3D&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Porta+Caneca+Decor'" 
+                         alt="Porta Caneca Decor">
+                    <h5>Porta-Copos Penélope</h5>
+                    <p>Conjunto de 4 porta-copos com ilustrações femininas da Corrida Maluca.</p>
+                    <p class="price">R$ 28,00</p>
+                    <a href="Loja feminina/porta.copos.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- Produto 15 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fjpeg&attachment_token=AOo0EEXxkM6ME9ZWFOdytKWcF%2BuqRXkS7doas%2F2%2BjYTHwv9a1nqv5vAyd92gLg2lFi4UB6c%2F9qfItyPTqeZs7j8Uwodok8n%2FnYDPJZvW%2BjbAbrqFId9MNDQsDwZgDRKAqFas5iFv4VdcbnLZEnmZSmjOAkcDLStn3OKPna9nLwJrFR9A15EkjmqNG6az%2BEjmFkbxXOcr5U8PEHenEZrDWc7l8Erxk%2Bf%2FHqV64wapnvI6pwd3%2FIwDQCOibjVPennril2tyrPcy9L2mGk3353LyIwnlLbfO6UgXGx%2FXlg2uixO%2BWQO43cnhA%2FBba1PTJ40g5x3talvRwIgyVTezA9b3%2Fa2cq5tITZSqNJkw5DO3EUnmFFXeoFEI72dIiuLK7HAQlJ%2BAf%2FU2ujEu1RDwGhxK9Ceibxd4m1kQZfeIexF%2FAWN%2FZc6FSdZINg%2BjmxZwoWTlIvPh%2FYnmxWDMlhH%2BHHAgnFc75J3Bq5dd%2BAJbieY4csbIDQTzmBvS5pmtDDU0KdkR140i%2Bq08m2epsDtr6bV%2BseqQW%2FbOcAQfHvFGs3Y2%2B0Iv2eGyKduJOXe%2BE7oAc9r3pIC18hw30aMSIS7ZL4w2F9Xdc9qmO2RjO%2FE3F4Xj2efWS%2B7P5fBmfcciGs%3D&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Conjunto+Esportivo'" 
+                         alt="Conjunto Esportivo">
+                    <h5>Conjunto Esportivo Penélope</h5>
+                    <p>Top + legging com estampa coordenada, ideal para treinos com estilo.</p>
+                    <p class="price">R$ 199,90</p>
+                    <a href="Loja feminina/conjunto.esportivo.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+             <!-- Produto 16 -->
+             <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEXzPbqthlOPjZ7%2ByRqmCVEghBQbJ%2B5t%2BqwOK1VadO2GywXqwSx86lpdflP9BmcnKDzJmdfGawnkLd%2FGqkvD%2BWdbST202vv8K6rAqlmtp1%2FarqjaUGu7QZ8PrRz5IB5W8HMmhHuXjiSrBhRHUVMzlzSypJXZGVVBgoEPZNF2xII6OoEwgHqEtMWF4JzgqAr2rOoo4OkEti86e%2Fs0KDhfAQaL7tZR5YILJTVc6y3pbP%2B5RoUCzG6nYCOMhLva2HwFc3PYFx3yx%2B5DqNJOLp8HMhHEdFtTQ3uR4KueHdPn55%2Bdx8ECa5rQKHgajLf6InLYaV0tHvEvVXALRVNADtCQIr7kGTwqjSpwQczScXQhhMKcdO896n9CBYDpGW%2FyqoHwPn3GIvbLRPmRu2rauaG5RTE05FxbBm%2FwDd7Fr7k5LUV2h00e7jV%2FRSa%2FVhiXoLXlQbRUFNUwyrZQdX1bVTX3MRiwM4slaQ1AK4stbhzPmnLmxZLgL%2FoJMER2CH8R7HAtIHe2KIEaG54%2F5cZwMf3KwSi0vz2C6Be85Vo43RsBoQzDOUT0aQet%2BbOPNYtmxlfbGXo8kJ2N5jShrvbzZODyXA%3D%3D&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Jaqueta+Penelope'" 
+                         alt="Jaqueta Muttley">
+                    <h5>Jaqueta Rosa Muttley</h5>
+                    <p>Jaqueta estilo bomber com patchs retrô da Corrida Maluca.</p>
+                    <p class="price">R$ 199,90</p>
+                    <a href="Loja feminina/jaqueta.penelope.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+             
+              <!-- Produto 17 -->
+              <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEXju%2BQYWynP0OhBzzkHyrNyNvEofGT%2BmFOLdUwLvX7V3wyQEX5FBWdDu6JL6nfvJcEHuLFjBBYxOthOJuJ%2BHHCP7DnTvUR4FNLeTGXvk1Je%2FLZkNpnBLZaaiipizA9f9OdGkM%2Buk5JmSgDaTeX3Tga67HjHp%2BTxc5IvNc9FS9isqanI4wapfyqmTNxSpyIO3ckEflQpSv8i0ibdElguqE3PRBGIQCEn9klQCCUMzJkyCFdnLfNWjpy6rZpuecnUFJcn74ZTqW9iYv6gqx7Am9O7m18n4FrHiikiwXbbQw18jMx7Tdo%2BrTaiws%2B5ktdj7sxBx4x8PS1L%2F4X0NM1CB1pHoX93XSR11A3I8LC%2BTbrRJdj09Pb%2BNhkrGVogAHCtp%2FOanHCHeiAkvYXd77viWAzE2%2Fr3eqocA09bL4N60w6LnmHVN78ZT0MC94xy4%2BDj9MYwRzDXr7iDoyVQj%2F8%2FmFLrWsrg8cqhaqPPdJM3Gm3cOpNQbrPOwRB7Tkt6coZ2jWXcA9Q0WpGh073JKLqxm6fflqOTgzJzZ5WjWJ4uCDFyHkLvEOFkTRQAPxJ3YnpW%2BoSLp8%2BkriWsJrFWnFzH&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Jaqueta+Penelope'" 
+                         alt="Jaqueta Muttley">
+                    <h5>Jaqueta Jeans Penélope Charmosa</h5>
+                    <p>Jaqueta Jeans Penélope Charmosa, retrô da Corrida Maluca.</p>
+                    <p class="price">R$ 399,90</p>
+                    <a href="Loja feminina/jaqueta.penelope1.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+            <!-- Produto 18 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEVF8mnTxunOJ4ELmk1uOdQ88TZu%2FwsjrAdSZ4i9AM670vjbNkM4A%2BQYes3rfPlJQWM%2BxiaHwCNIzbShoy6cXBdWVRfG42yBwskdcVPFgMSGubphBeoG37TiCkkiB4xT4Y5PzwBCQ3%2BSX0Is67IIHrt2486Y8IEHHl4rOc0gvm5scekfAuWwsW3zcyLFNizzhh%2BwSp2d6UiUUsd5pJb%2Bp53jiZlhRi0GROGgT1C8U0xBY8pxHdFqsiLX9Pt2%2BqKopyNYsSZ49zl54toRrQNSZu9PDBFlVvEZq3ElyGtDXm%2FRfNBUtp9YVmgyhHep0cPOhVZgY0d47ePk6a%2F%2FVSvHo7Li9brme1PGhy9W8jW8LAxUIPNysiRKrmmxYzW%2BYi%2B6S5GK4a5YEHYuNsCxwpqAex7zNQ5GLAGBrJNMlVSDwvZQq4yW4qS6npXDnkgOkNQuZos0%2FBZ1eFs3UJxO9u1uZh6lzmD779oJVBBSRa%2BSd2oy0H5iQFAbfHIeWWS1d952%2BGY6n3VMq0MqxDbcE1A%2FqqHaT7gAz4CIfG0kTtQ3QF5vubUwQRYdfgsB8CkCsIr%2FYDcLDWw1LBeUBWMm6Lo%3D&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Jaqueta+Penelope'" 
+                         alt="Jaqueta Muttley">
+                    <h5>Bobojaco Penélope Charmosa</h5>
+                    <p>Bobojaco esportivo Penélope Charmosa, retrô da Corrida Maluca.</p>
+                    <p class="price">R$ 299,90</p>
+                    <a href="Loja feminina/jaqueta.penelope2.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+             <!-- Produto 19 -->
+             <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEVY7RWyaWcQV1MlrBMWKky%2FKhdqmNxmvM5H9Nlrs4nyWUYLekjMeSKhm4iBrNUoy%2FdF7ikUeDodF5PyTegQved42q%2FdXPg5o86t9F%2BLPheHCgQ6Ey46eyx4C8J8RKWKbweHpLDHnUa7%2Bbh8I8oo9ZH9CQ5P8fd66vu3ttvQJd%2FWMRxSBcIPjTezFawdXR3JKUuB1qwvSCtDjl6GOdqYQJsCsHvkyqoSEgyVaIHCopQQgkKJwC8b487B5NGZNR3svUgLx3X5MhbFBfiGTNJxnYWBfY5EX9Ok3WEz342I%2FmbWNZQYTBK1dQDklpYtOkDdp2cXZmmwkuSb4abwqSXTHHxyahjxKc99t6XIeCpC7v5cM1qRRxHAkCo0hhsh0e12GWWRHser8F%2Fx9RL3ZZIDHhhTJHn9O7I5SzfkmEAO3P8LSSzoov5Zrf4rJrDcqQdoy6knf56nDi3oN7HdS7o9d7sbSdjBaLk6Iby5Cwio5b%2BJbAK5K6QCC0NkyLnjQ7QIrXzHpDJs%2F%2Fdu%2BeVpYa%2F4fWIQjeEtIafC0t%2BxfV3B49oO2Be2G6hTQiur05pVTwRyH76hR9HZe28xO%2FnZG0ojpQ%3D%3D&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Jaqueta+Penelope'" 
+                         alt="Jaqueta Muttley">
+                    <h5>Relógio Penélope Charmosa </h5>
+                    <p>Relógio Penélope Charmosa, retrô da Corrida Maluca.</p>
+                    <p class="price">R$ 999,90</p>
+                    <a href="Loja feminina/relogio.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div> 
+
+            
+            <!-- Produto 20 -->
+            <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEXsczNl%2B42EEvRKWld0SbjmZbv0wCoJgScoCzzCJz9Cg1kUkK22lAu6kW86okD7kbd9AMt7St6Bpbq%2FwqVNy5cFgaSokqaz6elKkJGVdMJzDkyNhwkYKOMN0chvJ4TKgZTOPKu3DmXPXgLSSBIMtWGBj0xg4W82XirIwS6xhr6bFSFSBchUUdSitKF58XkVLJQXF4SwN0J8sMtENd3R4QNy5C6GU%2BoHoMkMUXxQLo10rks1woQD6ODubo4E01SUP6nIkYBmZgkOlCyahZcywWrwRezFYhU7jQGG0oJ8qYafQIRO1C4SIgWtvNNapBSOL2bJP7m9UA8dyuty4qcGyzXN3QA8Sa80LEXiwke0XIz5QvvGr2sXc0ndipZCKcDBR5Igqwtx5LgO4%2BN84GjdURXmdQRSxW1WlziTdcGpsN1vIRHOMs8ZO4FVnGOKtjns7wA36vwx6n%2BZV85CLSuaxw8sC4WXXX61HdSv8X%2BsEge2OysHlwfksMSpr9IGG%2BWdukEhnXlLjdyj20v1qPu6IsfZRvAlx1r5%2FraI8I5FjJUXuJnfxkm8N5m2GjAv0yOBttQfdUBUQtGjGzy7wSI%3D&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Jaqueta+Penelope'" 
+                         alt="Jaqueta Muttley">
+                    <h5>Camiseta Polo Penélope Charmosa</h5>
+                    <p> camiseta polo Penélope Charmosa, retrô da Corrida Maluca.</p>
+                    <p class="price">R$ 299,90</p>
+                    <a href="Loja feminina/polo.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+             <!-- Produto 21 -->
+             <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUyc87YyRVpp5Lcl3eXCc24phwhl9Hs1RAunyXjEA33ZGjk3PBLE6%2BbMXf54CxqLekoWVZEJmmlFVLA5y%2BwCtfcX%2BPp%2BmmhwM00Vdv1vDddPPlMVJxzEG117qe9rvdBExK47VBifWYub%2FprM%2FgNOER2HazxAgODXlPzOqFP%2BOwNE2AJEHjOceeEN7Pvku3tVK3nuxCnmgASZ7XFPaD%2B0dpu9d6JdRLjddSMvgVa8jjf6nRrzTxHoPqosDDZlZ5f7Ht5oJJNlOqZRuqdSJvVIfiSoDP%2B9ueE%2FV5AqKySi4mcQPGOWEdkmOz9Wvz%2Bam1V4r%2FU5Pds2rco37txPJ5wiHQhdN%2FwuQILYSKbX%2FkjLuYsryi%2BH9DEKSuYlVadM1SVF5s4SbWDYn7W9Z4yD4iZAYtJxLYxS9twoN5fG%2B5SSMGr%2FdvDC759oKw5OvHQXMeX9O5hm2e5QPj9kKfIrFiDAZc7OcWFEie0SpL43uVgfNJQCI1YzMGMm4iBsedDxspz%2FVE4LY5O1MuNsD3qWqGuKJdD%2FXAgfBMWbRMKq3IuG0a6zdUh1K47lRr1pvU5%2FpDMg4pv1lxdfE%2FfN24LCU0%3D&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Jaqueta+Penelope'" 
+                         alt="Jaqueta Muttley">
+                    <h5>Boné Penélope Charmosa</h5>
+                    <p> Boné Penélope Charmosa, retrô da Corrida Maluca.</p>
+                    <p class="price">R$ 99,90</p>
+                    <a href="Loja feminina/bone.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+
+             <!-- Produto 22 -->
+             <div class="col d-flex">
+                <div class="product-card">
+                    <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEUA5H0y2ozCAqj6n%2FHiOIkyWDQv5aYRAnxULDyOIheKDQlPz1ysRhD6i00qLekCqz57xfSrzcKym722zWgGCBz7AtTLjeDtBPQAtMMwF4TYDGr%2B6sYej3lEMSUpzKqvLD3gvYZ%2BPd7o1R6lPjCmqPUR8koBFnowzo5TQsfLU%2BPqIIU7zAcM1F0SavbFcLw6sskQ6FZf8XjQA6TH%2FQvSTInqUtwgBB0aO0hj4GxHS2mZSdMjY%2FQ4se5n3gKY7%2FcRASZFmUfi6DPlJwN9BIK7Pn0vIbNL7DuotZ3Qo5ZzdwLI7DdyelA2LfdyUC2zIr8wPQMgtsm1z4xz1C0IA1yNsbqlM3wONeq8xVxVFXW%2Bbzbb25yGjBCzdh%2FuNfw3ilsggk7wc38IWL%2BxR54SllJ4O2D371TwFFKOcdoaAjAD3DrjnN8blnXiyTM9NqpW2dzC2pIFZ6mFP%2BB8hCwDiCnjlYdoYA7GixL7ZOhLwy6xGNS%2FqDlCbhMuAmstilE7yLgESV15nnKZUq2VxXewIoeB9uT5OjgKOM9%2BycTFgNhOQ%2Fn7QOZbqnK77G3s9VIV6yAmxirar0TXBqKgEjm%2BSFnWjA%3D%3D&allow_caching=true&sz=w512" 
+                         onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Jaqueta+Penelope'" 
+                         alt="Jaqueta Muttley">
+                    <h5>Calça Moletom</h5>
+                    <p> Calca Moletom Penélope Charmosa, retrô da Corrida Maluca.</p>
+                    <p class="price">R$ 99,99</p>
+                    <a href="Loja feminina/calca.html" class="btn btn-buy">Comprar</a>
+                </div>
+            </div>
+
+ <!-- Produto 23 -->
+ <div class="col d-flex">
+    <div class="product-card">
+        <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEWpIeELmqzd%2FAelwl5dsQSvzbENmtiqsqGaN%2FLOxTsgot8HHs3f0b3dVj8%2Bn6hyxLYObSnfV6PWVH083uKTlRXKwSqVQ9KwXCgKPYQLX%2FoIvAwZMm9OBsX9nuEYrUUDQagDqBoL2w%2BryWUYL4X%2F2X7jph002BaY10JjJvONAdjhih8w0V3nOZQC92g1YiM6cXJb43A6UJjcQ8vQrHbsx3NTZLuIXSW1mTvmRXS1pPcWWoepIwwyj15BoRaQCffO4VFKL5csWTPrnP8xQwEnuQ84vY7nCij6YaM6t8EnTQCrlI%2FgzhwL5seXHghJGA5TcMVVHNOwVmhEpFzheVwFUcNchjkGTbCUGp1Mg5GvjjqRGVpB%2FhAKoKXd3WNCt%2BcGdEeFpTKtqal5OzbhH6nNUSG25BtbmE5jmRC45Ya8aA0jt4FYBOIVPV031iMCcrNP2PEmEsZC%2BxNwsHawiHnaNTe1o8wMZSFMLXd6Hb%2FKxVkc6%2FJfTFtKfx5enILIe1NfVHsAYLvXZAVy9FPhnjWKMwBbkGJQHesS53UIXTM8ribB3QjdJ%2FNCKu5IPQE%2FSC3wJlWoa3bfMvtFm8my7S8n&allow_caching=true&sz=w512" 
+             onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Camiseta+Penelope'" 
+             alt="Camiseta Penélope Charmosa">
+        <h5>Camiseta Penélope Charmosa</h5>
+        <p>Camiseta feminina em malha premium com estampa exclusiva da Penélope.</p>
+        <p class="price">R$ 89,90</p>
+        <a href="Loja feminina/camiseta.penelop3.index.html" class="btn btn-buy">Comprar</a>
+    </div>
+</div>
+
+<!-- Produto 24 -->
+<div class="col d-flex">
+    <div class="product-card">
+        <img src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AOo0EEVJW%2F7sg2a7WT3pkCRzaeV1F2XeVLYhRvjDoHRFzm4ctbxd9SRl0BPLwnMpT77fLapINkWeLIl9n3B%2FCx8iU7n%2FWinBEb0DcxbZQlls6tIjmjAiW5hJAwXRl%2FDv7IehwGV7Ngz2rsF9bvlzFk2QunNmvNbFBGNebk%2BA7Qgy9k9bKvG5tRNh55B8%2Boe6rYgDeCR0y9VVC9juZ9%2Fz2Rc6Xy4167jD0X%2Bz5cb8LuAl0P5sdKpyRTgS9fL99PfRuYeWgjg8izNdrGkE7hZcWjOgH5UcUZdMuOUavjXLegZjleOQ0Bj7VGnbcRju7H0QwRzDTJqIYv9GdBAiAt%2B5GX5KoLZNvY1I3jCR4TfGowYoWWZtXMjz3EIStB9GmWIqeUo6IPtcAEkZrUrgztAgy4dLj0OCTjAAL%2B9dQz%2FaI3TwzheaCZyqwZ6GGpe3Akb%2FF8ZE%2Bm9koQEnVcvJXKFewetFjlD52WydGLuu%2FWfCoN0IPWLg5f5yRpbsvhWZxo5rbtab3a2ENUSrm28M9Pcf9jHHy8NJXvqlJT0DVNYTjqWA5kdwKeXVlmMdWX6UML6BX%2FTAVaJxK%2BKwWGPoJJT3IZk%3D&allow_caching=true&sz=w512" 
+             onerror="this.src='https://dummyimage.com/400x300/e5e5e5/666666?text=Camiseta+Penelope'" 
+             alt="Camiseta Penélope Charmosa">
+        <h5>Carteira Penélope Charmosa</h5>
+        <p>Carteira da Penélope, a praticidade que a vida feminina precisa.</p>
+        <p class="price">R$ 69,90</p>
+        <a href="Loja feminina/carteira1.index.html" class="btn btn-buy">Comprar</a>
+    </div>
+</div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    © 2025 Corrida Maluca Oficial - Moda Feminina - Todos os direitos reservados
+</footer>
+
+<button id="btnTopo" title="Voltar ao topo" class="btn btn-lg">🚀</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Lógica do botão Voltar ao Topo
+    const btnTopo = document.getElementById("btnTopo");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            btnTopo.style.display = "block";
+        } else {
+            btnTopo.style.display = "none";
+        }
+    });
+    btnTopo.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+</script>
+
+</body>
+</html>
